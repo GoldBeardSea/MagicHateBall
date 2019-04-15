@@ -1,0 +1,79 @@
+/* Body affecting styling */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: lightblue;
+}
+
+/* Header styling */
+header {
+  background-color: darkblue;
+  color: whitesmoke;
+  width: 960px;
+  margin: 0px auto;
+  border: 1px solid orange;
+  text-align: center;
+}
+
+/* header h1 {
+  text-align: center;
+}
+
+header h3 {
+  text-align: center;
+} */
+
+nav {
+  background-color: blue;
+}
+
+nav ul {
+  list-style: none;
+  text-align: left;
+
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+}
+
+ul a {
+  color: whitesmoke;
+}
+
+/* Main element styling */
+main {
+  border: 1px solid orange; 
+  width: 960px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+main ul {
+  list-style: none;
+}
+
+.gameContainer {
+  position: relative;
+}
+
+img {
+  width: 400px;
+  position: relative;
+}
+
+#hateballResponse {
+
+  position: absolute;
+  color: whitesmoke;
+  top: 38%;
+  left: 47%;
+}
+
+/* Footer styling */
+footer {
+  width: 960px;
+  margin: 0px auto;
+  border: 1px solid orange;
+}
