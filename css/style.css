@@ -54,7 +54,6 @@ img {
 }
 
 #hateballResponse {
-
   position: absolute;
   color: whitesmoke;
   top: 38%;
@@ -70,10 +69,14 @@ img {
   margin: 0px auto;
   margin-top: 10px;
   margin-bottom: 10px;
-  padding: 10px 15px; 
+}
+
+.buttons {
   background-color: darkblue;
   color: whitesmoke;
   border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
 }
 
 /* Footer styling */
@@ -85,3 +88,10 @@ footer {
   text-align: center;
   color: whitesmoke;
 }
+
+/* Styling for Results page only */
+fieldset {
+  margin: 10px;
+}
+
+/* Styling for AboutUs page only */
