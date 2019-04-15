@@ -1,18 +1,15 @@
 'use strict';
 
 var userObjArray = [];
-var userQuery = document.getElementById('userQuestion');
-var questionCounter = 8;
-userObjArray =
+var userQuery = document.getElementById('userQuestion').value;
+var questionCounter = 9;
 
 function User(name) {
   this.name = name;
   this.score = 0;
   this.questions = [];
   userObjArray.push(this);
-};
-
-
+}
 
 function choiceGenerator() {
   var hateBallPositive = [];
@@ -21,21 +18,24 @@ function choiceGenerator() {
   var hateBallChoices = [hateBallPositive,hateBallNeutral,hateBallNegative];
   var choiceArray = hateBallChoices[Math.floor(Math.random() * hateBallChoices.length)];
   var choiceSelect = [Math.floor(Math.random() * choiceArray.length)];
-  response.push(choiceArray[choiceSelect]);
   return choiceArray[choiceSelect];
-
 }
 
-function handleQuery (event) {
-  // todo
-}
+let handleQuery = function (event) {
+  event.preventDefault();
+  // let formEl = User.name;
+  if (questionCounter > 8) {
+    let newUser = new User(userQuery);
+    console.log(newUser);
+  }
+};
 
-function renderResponse(response) {
-  // todo
-}
+// function renderResponse(response) {
+// todo
+// }
 
-function renderResultsList() {
-  // todo
-}
+// function renderResultsList() {
+// todo
+// }
 
 document.getElementById('submit').addEventListener('click', handleQuery);
