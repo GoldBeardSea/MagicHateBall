@@ -15,7 +15,14 @@ function User(name) {
 
 
 function choiceGenerator() {
-  // todo
+  var hateBallPositive = [];
+  var hateBallNegative =[];
+  var hateBallNeutral = [];
+  var hateBallChoices = [hateBallPositive,hateBallNeutral,hateBallNegative];
+  var choiceArray = hateBallChoices[Math.floor(Math.random() * hateBallChoices.length)];
+  var choiceSelect = [Math.floor(Math.random() * choiceArray.length)];
+  response.push(choiceArray[choiceSelect]);
+  return choiceArray[choiceSelect];
 
 }
 
