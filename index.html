@@ -10,27 +10,35 @@
 </head>
 <body>
   <header>
+      <h1>Magic Hate Ball</h1>
+      <h3>The grumpy cat of 8-balls</h3>
     <nav>
       <ul>
-        <li><a href="">Game</a></li>
-        <li><a href="">Result</a></li>
-        <li><a href="">About Us</a></li>
+        <li><a href="index.html">Game</a></li>
+        <li><a href="results.html">Result</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
       </ul>
     </nav>
   </header>  
   <main>
+    <h3>You dare question the Magic Hate Ball?</h3>
     <div id='instruction'>
-      <p>Instructions the Guts</p>
+      <ul>
+        <li>Enter your burning questions, see if the Hate Ball will deign to answer</li>
+        <li>Be careful though, too many stupid questions and the Hate Ball will be done with you</li>
+        <li>But first, what is your name?</li>
+      </ul>
     </div>
     <section>
       
-      <div>
+      <div class="gameContainer">
         <img id='eightball' src="./img/eightball.png" alt="Magic Eight Ball" title="Magic Eight Ball">
+        <p id='hateballResponse'>Fuck you</p>
         <form action="submit">
           <textarea name="User Question" id="userQuestion" cols="30" rows="1"></textarea>
           <input type="submit" value='Submit'>
         </form>
-        <p id='hateballResponse'></p>
+       
       </div>
       
       <!-- Todo Rage Meter -->
@@ -38,7 +46,7 @@
     </section>
   </main>
   <footer>
-    
+    <p>This is a footer</p>
   </footer>
 <script src="./js/app.js"></script>
 </body>
