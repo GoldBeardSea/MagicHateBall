@@ -23,9 +23,9 @@ function choiceGenerator() {
 
 let handleQuery = function (event) {
   event.preventDefault();
-  let formEl = event.target;
+  // let formEl = User.name;
   if (questionCounter > 8) {
-    let newUser = new User(formEl.userQuestion.value);
+    let newUser = new User(userQuery);
     console.log(newUser);
   }
 };
