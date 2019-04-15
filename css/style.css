@@ -14,14 +14,6 @@ header {
   text-align: center;
 }
 
-/* header h1 {
-  text-align: center;
-}
-
-header h3 {
-  text-align: center;
-} */
-
 nav {
   background-color: blue;
 }
@@ -29,7 +21,6 @@ nav {
 nav ul {
   list-style: none;
   text-align: left;
-
 }
 
 nav ul li {
@@ -69,6 +60,14 @@ img {
   color: whitesmoke;
   top: 38%;
   left: 47%;
+}
+
+form textarea {
+  margin: 20px 5px 0px 5px;
+}
+
+#submit {
+  
 }
 
 /* Footer styling */
