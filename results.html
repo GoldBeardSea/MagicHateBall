@@ -21,14 +21,21 @@
     </nav>
   </header>  
   <main>
+    <h3>A recap of your misery...</h3>
     <ul id="renderHate">
 
     </ul>
-    <form>
-      <!-- todo Fill in final guess when time comes -->
-    </form>
-    <!-- id = 'playAgain' Play Again/Button should clear Local Storage -->
+    <fieldset>
+      <legend>Can you guess the Hate balls hated word?</legend>
+        <form>
+            <p id="anagramResult"></p>
+            <input type="text">
+            <button id="anagramSubmit" class="buttons">Check</button>
+          </form>
+    </fieldset>
 
+    <!-- id = 'playAgain' Play Again/Button should clear Local Storage -->
+    <button id="playAgain" class="buttons">Play Again</button>
   </main>
   <footer>
 

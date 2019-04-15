@@ -10,7 +10,7 @@ header {
   color: whitesmoke;
   width: 960px;
   margin: 0px auto;
-  border: 1px solid orange;
+  padding-top: 5px;
   text-align: center;
 }
 
@@ -35,7 +35,6 @@ ul a {
 
 /* Main element styling */
 main {
-  border: 1px solid orange; 
   width: 960px;
   margin: 0px auto;
   text-align: center;
@@ -43,6 +42,10 @@ main {
 
 main ul {
   list-style: none;
+}
+
+main ul li {
+  line-height: 1.5em;
 }
 
 .gameContainer {
@@ -55,24 +58,55 @@ img {
 }
 
 #hateballResponse {
-
   position: absolute;
   color: whitesmoke;
   top: 38%;
   left: 47%;
 }
 
-form textarea {
+#userQuestion {
   margin: 20px 5px 0px 5px;
 }
 
 #submit {
-  
+  display: block;
+  margin: 0px auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  background-color: darkblue;
+  color: whitesmoke;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
 }
 
 /* Footer styling */
 footer {
   width: 960px;
   margin: 0px auto;
-  border: 1px solid orange;
+  background-color: darkblue;
+  padding: 10px 0px;
+  text-align: center;
+  color: whitesmoke;
+}
+
+/* Styling for Results page only */
+fieldset {
+  margin: 10px;
+}
+
+/* Styling for AboutUs page only */
+.aboutUs {
+  margin: 0px auto;
+  padding: 0px;
+}
+
+#aboutUsParagraph {
+  width: 800px;
+  margin: 0px auto;
+  margin-bottom: 20px;
+  line-height: 1.5em;
 }
