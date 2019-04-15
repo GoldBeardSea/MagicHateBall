@@ -44,6 +44,10 @@ main ul {
   list-style: none;
 }
 
+main ul li {
+  line-height: 1.5em;
+}
+
 .gameContainer {
   position: relative;
 }
@@ -95,3 +99,14 @@ fieldset {
 }
 
 /* Styling for AboutUs page only */
+.aboutUs {
+  margin: 0px auto;
+  padding: 0px;
+}
+
+#aboutUsParagraph {
+  width: 800px;
+  margin: 0px auto;
+  margin-bottom: 20px;
+  line-height: 1.5em;
+}
