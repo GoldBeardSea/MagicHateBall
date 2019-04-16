@@ -3,6 +3,7 @@
 var userObjArray = [];
 var userQuery = document.getElementById('userQuestion');
 var questionCounter = 9;
+var thisRoundMagicWord = 'eight';
 
 
 function User(name) {
@@ -37,6 +38,8 @@ let handleQuery = function (event) {
     renderResultsList();
   }
 
+  percentageCalclulator(userSubmission);
+
 };
 
 function renderResponse() {
@@ -52,6 +55,37 @@ function renderResultsList() {
     ulEl.appendChild(liEl);
   }
 }
+
+// Game Logic:
+
+function percentageCalclulator (questionString){
+
+  var matchingLetters = 0;
+  // if (thisRoundMagicWord === null){
+  //   randomMagicWord();
+  // }
+
+  for (var i = 0; i < questionString.length+1; i++){
+    for (var j = 0; j < thisRoundMagicWord.length+1; j++){
+      if(questionString[i] === thisRoundMagicWord[j]){
+        console.log(`Question: ${questionString}`);
+        var capLetter = questionString.charAt(i).toUpperCase();
+        questionString = questionString.slice(0, i) + capLetter + questionString.slice(i+1, questionString.length);
+        matchingLetters++;
+      }
+    }
+  }
+
+  //add to array
+}
+
+// functiom randomMagicWord (){
+
+  
+// }
+
+//Execute on Load:
+
 document.getElementById('submit').addEventListener('click', handleQuery);
 
-renderResultsList();
+// renderResultsList();
