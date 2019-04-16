@@ -1,11 +1,11 @@
 'use strict';
 let anagramArray = ['i', 'e', 'g', 'h', 't'];
-let userObjArray = JSON.parse(localStorage.getItem('endState'));
+const userObjArray = JSON.parse(localStorage.getItem('endState'));
 let userQuery = document.getElementById('anagramQuery');
 
 
 
-
+// this amends the list
 function renderResultsList() {
   console.log(userObjArray);
   let ulEl = document.getElementById('renderHate');
@@ -18,12 +18,14 @@ function renderResultsList() {
   pEl.textContent = anagramArray.join('');
 } renderResultsList();
 
+//this anagramQuery handles
 let anagramQuery = function (event) {
   event.preventDefault();
   let condition = userQuery.value;
-  console.log(condition + ' ' + userObjArray[0].keyWord);
-  if (condition === userObjArray[0].keyWord) {
+  if (condition === userObjArray[0].key) {
     alert('You got it');
+  } else {
+    //code here for failure
   }
 
 };
