@@ -46,6 +46,7 @@ let handleQuery = function (event) {
   // added for eight ball animation
   if(userSubmission !== 'undefined'){
     eightBall.classList.add('apply-shake');
+    responseContent.classList.add('color-change');
   }
 
   percentageCalclulator(userSubmission);
@@ -98,7 +99,9 @@ function randomMagicWord() {
 let userQueryHandler = function(event){
   event.preventDefault();
   eightBall.classList.remove('apply-shake');
+  responseContent.classList.remove('color-change');
 };
+
 //Execute on Load:
 randomMagicWord();
 
