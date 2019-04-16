@@ -29,7 +29,6 @@ let handleQuery = function (event) {
 
   event.preventDefault();
   let userSubmission = userQuery.value;
-  
   if (questionCounter > 8) {
     new User(userSubmission);
     questionCounter--;
@@ -42,36 +41,20 @@ let handleQuery = function (event) {
     localStorage.setItem('endState', JSON.stringify(userObjArray));
     questionCounter = 9;
     window.location.href = 'results.html';
-    // renderResultsList();
   }
-  console.log('this is userquery '+userQuery.value);
-  console.log('this is usersubmission ' +userSubmission);
-  console.log("the two are equal " + userQuery.value.localeCompare(userSubmission));
   // added for eight ball animation
   if(userSubmission !== 'undefined'){
     eightBall.classList.add('apply-shake');
-
-
   }
 
   percentageCalclulator(userSubmission);
-
-  eightBall.classList.remove('apply-shake');
+  userQueryHandler(); // reset the animation
 };
 
 function renderResponse() {
   let responseContent = document.getElementById('hateballResponse');
   responseContent.textContent = choiceGenerator();
 }
-
-// function renderResultsList() {
-//   let ulEl = document.getElementById('renderHate');
-//   for (let i in userObjArray[0].questions) {
-//     let liEl = document.createElement('li');
-//     liEl.textContent = userObjArray[0].questions[i];
-//     ulEl.appendChild(liEl);
-//   }
-// }
 
 // Game Logic:
 
@@ -111,17 +94,13 @@ function randomMagicWord() {
 
   console.log(`thisRoundMagicWord: ${thisRoundMagicWord}`);
 }
-
+// function to reset the animation
+let userQueryHandler = function(event){
+  event.preventDefault();
+  eightBall.classList.remove('apply-shake');
+};
 //Execute on Load:
-
 randomMagicWord();
-// function renderResultsList() {
-//   let ulEl = document.getElementById('renderHate');
-//   for (let i in userObjArray[0].questions) {
-//     let liEl = document.createElement('li');
-//     liEl.textContent = userObjArray[0].questions[i];
-//     ulEl.appendChild(liEl);
-//   }
-// }
+
 document.getElementById('submit').addEventListener('click', handleQuery);
-// userQuery.addEventListener('animationend', handleQuery);
+userQuery.addEventListener('change', userQueryHandler);
