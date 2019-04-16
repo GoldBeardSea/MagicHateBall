@@ -1,0 +1,112 @@
+/* Body affecting styling */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: lightblue;
+}
+
+/* Header styling */
+header {
+  background-color: darkblue;
+  color: whitesmoke;
+  width: 960px;
+  margin: 0px auto;
+  padding-top: 5px;
+  text-align: center;
+}
+
+nav {
+  background-color: blue;
+}
+
+nav ul {
+  list-style: none;
+  text-align: left;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+}
+
+ul a {
+  color: whitesmoke;
+}
+
+/* Main element styling */
+main {
+  width: 960px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+main ul {
+  list-style: none;
+}
+
+main ul li {
+  line-height: 1.5em;
+}
+
+.gameContainer {
+  position: relative;
+}
+
+img {
+  width: 400px;
+  position: relative;
+}
+
+#hateballResponse {
+  position: absolute;
+  color: whitesmoke;
+  top: 38%;
+  left: 47%;
+}
+
+#userQuestion {
+  margin: 20px 5px 0px 5px;
+}
+
+#submit {
+  display: block;
+  margin: 0px auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  background-color: darkblue;
+  color: whitesmoke;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+}
+
+/* Footer styling */
+footer {
+  width: 960px;
+  margin: 0px auto;
+  background-color: darkblue;
+  padding: 10px 0px;
+  text-align: center;
+  color: whitesmoke;
+}
+
+/* Styling for Results page only */
+fieldset {
+  margin: 10px;
+}
+
+/* Styling for AboutUs page only */
+.aboutUs {
+  margin: 0px auto;
+  padding: 0px;
+}
+
+#aboutUsParagraph {
+  width: 800px;
+  margin: 0px auto;
+  margin-bottom: 20px;
+  line-height: 1.5em;
+}

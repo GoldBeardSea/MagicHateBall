@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/reset.css" type="text/css">
+  <link href="./css/style.css" rel="stylesheet" type="text/css" />
+  <title>Magic Hate Ball</title>
+</head>
+<body>
+  <header>
+      <h1>Magic Hate Ball</h1>
+      <h3>The grumpy cat of 8-balls</h3>
+    <nav>
+      <ul>
+        <li><a href="index.html">Game</a></li>
+        <li><a href="results.html">Result</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>  
+  <main>
+    <h3>You dare question the Magic Hate Ball?</h3>
+    <div id='instruction'>
+      <ul>
+        <li>Enter your burning questions, see if the Hate Ball will deign to answer</li>
+        <li>Be careful though, too many stupid questions and the Hate Ball will be done with you</li>
+        <li>But first, what is your name?</li>
+      </ul>
+    </div>
+    <section>
+      
+      <div class="gameContainer">
+        <img id='eightball' src="./img/eightball.png" alt="Magic Eight Ball" title="Magic Eight Ball">
+        <p id='hateballResponse'>Fuck you</p>
+        <form action="submit">
+          <textarea name="userQuestion" id="userQuestion" cols="30" rows="1"></textarea>
+          <input type="submit" value='Submit' id='submit' class="buttons">
+        </form>
+      </div>
+      <!-- Todo Rage Meter -->
+      <!-- <canvas>Scaffolding for Tomorrow</canvas> -->
+    </section>
+  </main>
+  <footer>
+    <p>This has been a production by: Anthony, Paula, Timothy, William</p>
+  </footer>
+<script src="./js/app.js"></script>
+</body>
+</html>
