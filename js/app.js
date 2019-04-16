@@ -109,15 +109,9 @@ let userQueryHandler = function(event){
   event.preventDefault();
   eightBall.classList.remove('apply-shake');
 };
+
 //Execute on Load:
 randomMagicWord();
-// function renderResultsList() {
-//   let ulEl = document.getElementById('renderHate');
-//   for (let i in userObjArray[0].questions) {
-//     let liEl = document.createElement('li');
-//     liEl.textContent = userObjArray[0].questions[i];
-//     ulEl.appendChild(liEl);
-//   }
-// }
+
 document.getElementById('submit').addEventListener('click', handleQuery);
 userQuery.addEventListener('change', userQueryHandler);

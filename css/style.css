@@ -59,7 +59,6 @@ img {
 
 #hateballResponse {
   position: absolute;
-  color: whitesmoke;
   top: 38%;
   left: 47%;
 }
@@ -130,6 +129,17 @@ fieldset {
   }
 }
 
+@keyframes color_change {
+	from { color: black; }
+	to { color: white; }
+}
+
 .apply-shake {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+.color-change{
+  animation-name: color_change;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
 }
