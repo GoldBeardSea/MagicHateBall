@@ -9,7 +9,7 @@ function User(name) {
   this.name = name;
   this.score = 0;
   this.questions = [];
-  this.key = 'key';
+  this.key = 'eight';
   userObjArray.push(this);
 }
 

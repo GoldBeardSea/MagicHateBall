@@ -1,7 +1,10 @@
 'use strict';
-let anagramArray = [];
+let anagramArray = ['i', 'e', 'g', 'h', 't'];
 let userObjArray = JSON.parse(localStorage.getItem('endState'));
-let keyWord = userObjArray[0].keyWord;
+let userQuery = document.getElementById('anagramQuery');
+
+
+
 
 function renderResultsList() {
   console.log(userObjArray);
@@ -11,8 +14,18 @@ function renderResultsList() {
     liEl.textContent = userObjArray[0].questions[i];
     ulEl.appendChild(liEl);
   }
+  let pEl = document.getElementById('anagramResult');
+  pEl.textContent = anagramArray.join('');
 } renderResultsList();
 
+let anagramQuery = function (event) {
+  event.preventDefault();
+  let condition = userQuery.value;
+  console.log(condition + ' ' + userObjArray[0].keyWord);
+  if (condition === userObjArray[0].keyWord) {
+    alert('You got it');
+  }
 
+};
 
-// document.getElementById('anagramSubmit').addEventListener('click', anagramQuery);
+document.getElementById('anagramSubmit').addEventListener('click', anagramQuery);
