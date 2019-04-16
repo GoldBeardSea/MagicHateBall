@@ -97,10 +97,10 @@ function randomMagicWord() {
   console.log(`thisRoundMagicWord: ${thisRoundMagicWord}`);
 }
 // function to reset the animation
-function userQueryHandler() {
-  // event.preventDefault();
+let userQueryHandler = function(event){
+  event.preventDefault();
   eightBall.classList.remove('apply-shake');
-}
+};
 //Execute on Load:
 randomMagicWord();
 
