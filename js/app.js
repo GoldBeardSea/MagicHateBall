@@ -3,9 +3,9 @@
 var userObjArray = [];
 var userQuery = document.getElementById('userQuestion');
 var eightBall = document.getElementById('eightball'); //added for animation for eight ball
+let responseContent = document.getElementById('hateballResponse');
 var questionCounter = 9;
 var thisRoundMagicWord;
-
 
 function User(name, key) {
   this.name = name;
@@ -32,6 +32,7 @@ let handleQuery = function (event) {
   if (questionCounter > 8) {
     new User(userSubmission, thisRoundMagicWord);
     questionCounter--;
+    responseContent.textContent = `Whatever, ${userSubmission}, let's get this show on the road, what are you 'questions'?`;
   } else {
     questionCounter--;
     // userObjArray[0].questions.push(userSubmission);
@@ -52,7 +53,6 @@ let handleQuery = function (event) {
 };
 
 function renderResponse() {
-  let responseContent = document.getElementById('hateballResponse');
   responseContent.textContent = choiceGenerator();
 }
 
