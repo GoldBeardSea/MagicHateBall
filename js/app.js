@@ -7,11 +7,11 @@ var questionCounter = 9;
 var thisRoundMagicWord;
 
 
-function User(name) {
+function User(name, key) {
   this.name = name;
   this.score = 0;
   this.questions = [];
-  this.key = 'eight';
+  this.key = key;
   userObjArray.push(this);
 }
 
@@ -30,11 +30,11 @@ let handleQuery = function (event) {
   event.preventDefault();
   let userSubmission = userQuery.value;
   if (questionCounter > 8) {
-    new User(userSubmission);
+    new User(userSubmission, thisRoundMagicWord);
     questionCounter--;
   } else {
     questionCounter--;
-    userObjArray[0].questions.push(userSubmission);
+    // userObjArray[0].questions.push(userSubmission);
     renderResponse();
   }
   if (questionCounter === 0) {
@@ -76,7 +76,7 @@ function percentageCalclulator (questionString){
       }
     }
   }
-
+  userObjArray[0].questions.push(questionString);
   currentScore = Math.round((matchingLetters / questionString.length) * 100);
 
   if (userObjArray[0].score === 0){
@@ -91,7 +91,7 @@ function randomMagicWord() {
 
   console.log(`Magic words length: ${magicWords.length}`);
   thisRoundMagicWord = magicWords[Math.floor(Math.random() * magicWords.length)];
-
+  
   console.log(`thisRoundMagicWord: ${thisRoundMagicWord}`);
 }
 // function to reset the animation
