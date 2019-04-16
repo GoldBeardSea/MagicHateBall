@@ -2,6 +2,7 @@
 
 var userObjArray = [];
 var userQuery = document.getElementById('userQuestion');
+var eightBall = document.getElementById('eightball'); //added for animation for eight ball
 var questionCounter = 9;
 
 
@@ -24,8 +25,10 @@ function choiceGenerator() {
 }
 
 let handleQuery = function (event) {
+
   event.preventDefault();
   let userSubmission = userQuery.value;
+  
   if (questionCounter > 8) {
     new User(userSubmission);
     questionCounter--;
@@ -35,11 +38,22 @@ let handleQuery = function (event) {
     renderResponse();
   }
   if (questionCounter === 0) {
+
+    // renderResultsList();
+  }
+  console.log('this is userquery '+userQuery.value);
+  console.log('this is usersubmission ' +userSubmission);
+  console.log("the two are equal " + userQuery.value.localeCompare(userSubmission));
+  // added for eight ball animation
+  if(userSubmission !== 'undefined'){
+    eightBall.classList.add('apply-shake');
     localStorage.setItem('endState', JSON.stringify(userObjArray));
     questionCounter = 9;
     window.location.href = 'results.html';
+
   }
 
+  eightBall.classList.remove('apply-shake');
 };
 
 function renderResponse() {
@@ -47,4 +61,14 @@ function renderResponse() {
   responseContent.textContent = choiceGenerator();
 }
 
+// function renderResultsList() {
+//   let ulEl = document.getElementById('renderHate');
+//   for (let i in userObjArray[0].questions) {
+//     let liEl = document.createElement('li');
+//     liEl.textContent = userObjArray[0].questions[i];
+//     ulEl.appendChild(liEl);
+//   }
+// }
 document.getElementById('submit').addEventListener('click', handleQuery);
+// userQuery.addEventListener('animationend', handleQuery);
+
