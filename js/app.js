@@ -39,7 +39,9 @@ let handleQuery = function (event) {
     renderResponse();
   }
   if (questionCounter === 0) {
-
+    localStorage.setItem('endState', JSON.stringify(userObjArray));
+    questionCounter = 9;
+    window.location.href = 'results.html';
     // renderResultsList();
   }
   console.log('this is userquery '+userQuery.value);
@@ -48,9 +50,7 @@ let handleQuery = function (event) {
   // added for eight ball animation
   if(userSubmission !== 'undefined'){
     eightBall.classList.add('apply-shake');
-    localStorage.setItem('endState', JSON.stringify(userObjArray));
-    questionCounter = 9;
-    window.location.href = 'results.html';
+
 
   }
 
@@ -64,14 +64,14 @@ function renderResponse() {
   responseContent.textContent = choiceGenerator();
 }
 
-function renderResultsList() {
-  let ulEl = document.getElementById('renderHate');
-  for (let i in userObjArray[0].questions) {
-    let liEl = document.createElement('li');
-    liEl.textContent = userObjArray[0].questions[i];
-    ulEl.appendChild(liEl);
-  }
-}
+// function renderResultsList() {
+//   let ulEl = document.getElementById('renderHate');
+//   for (let i in userObjArray[0].questions) {
+//     let liEl = document.createElement('li');
+//     liEl.textContent = userObjArray[0].questions[i];
+//     ulEl.appendChild(liEl);
+//   }
+// }
 
 // Game Logic:
 
