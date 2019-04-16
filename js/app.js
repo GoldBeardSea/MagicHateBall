@@ -93,8 +93,10 @@ let handleQuery = function (event) {
     eightBall.classList.add('apply-shake');
     responseContent.classList.add('color-change');
   }
+  userQuery.value = null;
   console.log(`user score is: ${userObjArray[0].score}`);
   userQueryHandler(); // reset the animation
+  
 };
 
 function renderResponse() {
