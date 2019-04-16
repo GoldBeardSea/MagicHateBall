@@ -61,14 +61,14 @@ function renderResultsList() {
 function percentageCalclulator (questionString){
 
   var matchingLetters = 0;
+  var currentScore = 0;
   // if (thisRoundMagicWord === null){
   //   randomMagicWord();
   // }
 
-  for (var i = 0; i < questionString.length+1; i++){
-    for (var j = 0; j < thisRoundMagicWord.length+1; j++){
+  for (var i = 0; i < questionString.length; i++){
+    for (var j = 0; j < thisRoundMagicWord.length; j++){
       if(questionString[i] === thisRoundMagicWord[j]){
-        console.log(`Question: ${questionString}`);
         var capLetter = questionString.charAt(i).toUpperCase();
         questionString = questionString.slice(0, i) + capLetter + questionString.slice(i+1, questionString.length);
         matchingLetters++;
@@ -76,12 +76,17 @@ function percentageCalclulator (questionString){
     }
   }
 
-  //add to array
+  currentScore = Math.round((matchingLetters / questionString.length) * 100);
+
+  if (userObjArray[0].score === 0){
+    userObjArray[0].score = currentScore;
+  } else {
+    userObjArray[0].score = Math.round((userObjArray[0].score + currentScore) / 2);
+  }
 }
 
 // functiom randomMagicWord (){
 
-  
 // }
 
 //Execute on Load:
