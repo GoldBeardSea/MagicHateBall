@@ -1,5 +1,6 @@
 'use strict';
-let userObjArray = JSON.parse(localStorage.getItem('endState'));
+
+const userObjArray = JSON.parse(localStorage.getItem('endState'));
 let userQuery = document.getElementById('anagramQuery');
 
 function scrambleWord(word){
@@ -15,7 +16,7 @@ function scrambleWord(word){
 }
 
 
-
+// this amends the list
 function renderResultsList() {
   console.log(userObjArray);
   let ulEl = document.getElementById('renderHate');
@@ -29,12 +30,14 @@ function renderResultsList() {
   pEl.textContent = scrambledKey;
 } renderResultsList();
 
+//this anagramQuery handles
 let anagramQuery = function (event) {
   event.preventDefault();
   let condition = userQuery.value;
-  console.log(condition + ' ' + userObjArray[0].keyWord);
-  if (condition === userObjArray[0].keyWord) {
+  if (condition === userObjArray[0].key) {
     alert('You got it');
+  } else {
+    //code here for failure
   }
 
 };
