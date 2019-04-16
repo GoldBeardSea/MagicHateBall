@@ -16,13 +16,22 @@ function User(name, key) {
 }
 
 function choiceGenerator() {
-  var hateBallPositive = ['Good'];
-  var hateBallNegative =['Negative'];
-  var hateBallNeutral = ['Neutral'];
-  var hateBallChoices = [hateBallPositive,hateBallNeutral,hateBallNegative];
-  var choiceArray = hateBallChoices[Math.floor(Math.random() * hateBallChoices.length)];
-  var choiceSelect = [Math.floor(Math.random() * choiceArray.length)];
-  return choiceArray[choiceSelect] + ' ' + questionCounter;
+  if(userObjArray[0].score >= 90){
+    //positive
+    var positiveArray = ['happy1', 'happy2', 'happy3'];
+    var chosenPositiveArray = [Math.floor(Math.random() * positiveArray.length)];
+    return positiveArray[chosenPositiveArray] + ' ' + questionCounter;
+  }else if(userObjArray[0].score >= 70){
+    //neutral
+    var neutralArray = ['neutral1', 'neutral2', 'neutral3'];
+    var chosenNeutralArray = [Math.floor(Math.random() * neutralArray.length)];
+    return neutralArray[chosenNeutralArray] + ' ' + questionCounter;
+  }else if(userObjArray[0].score >= 0){
+    //negative
+    var negativeArray = ['harsh1', 'harsh2', 'harsh3'];
+    var chosenNegativeArray = [Math.floor(Math.random() * negativeArray.length)];
+    return negativeArray[chosenNegativeArray] + ' ' + questionCounter;
+  }
 }
 
 let handleQuery = function (event) {
