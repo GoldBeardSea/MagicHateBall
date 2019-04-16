@@ -16,13 +16,58 @@ function User(name, key) {
 }
 
 function choiceGenerator() {
-  var hateBallPositive = ['Good'];
-  var hateBallNegative =['Negative'];
-  var hateBallNeutral = ['Neutral'];
-  var hateBallChoices = [hateBallPositive,hateBallNeutral,hateBallNegative];
-  var choiceArray = hateBallChoices[Math.floor(Math.random() * hateBallChoices.length)];
-  var choiceSelect = [Math.floor(Math.random() * choiceArray.length)];
-  return choiceArray[choiceSelect] + ' ' + questionCounter;
+  if(userObjArray[0].score >= 80){
+    //positive
+    var positiveArray = [
+      'That is… a good question',
+      'I hate to admit it, but the odds are good.',
+      'If I have to say yes, then yes.',
+      'You’ve caught me on a good day, so yes.',
+      'Hmmm… why not?',
+      'If that turns out to be yes, I owe you a drink',
+      'Well, well, the odds are ever in your favor.',
+      'I guess so.',
+      'Sure, why you asking me that for?',
+      'Sure, whatever, just stop shaking the ball.'
+    ];
+    var chosenPositiveArray = [Math.floor(Math.random() * positiveArray.length)];
+    console.log('positive answer');
+    return positiveArray[chosenPositiveArray] + ' ' + questionCounter;
+  }else if(userObjArray[0].score >= 40){
+    //neutral
+    var neutralArray = [
+      'This question makes me uncomfortable',
+      'Why do you want to know?',
+      'Huh. I have no answer for that.',
+      'Let me think about that',
+      'I want to say maybe, but i don’t know',
+      'Ask me that another day',
+      'I’m going to let you slide with that one',
+      'I’m not going to tell your Mom you asked that. ',
+      'Let’s change the subject, please.',
+      'Whew….I thought you were going to ask me something else.'
+    ];
+    var chosenNeutralArray = [Math.floor(Math.random() * neutralArray.length)];
+    console.log('neutral answer');
+    return neutralArray[chosenNeutralArray] + ' ' + questionCounter;
+  }else if(userObjArray[0].score >= 0){
+    //negative
+    var negativeArray = [
+      'Did you really ask that?',
+      'I am judging you so hard right now.',
+      'Are you trying to make me angry right now?',
+      'Did I ever tell you I don’t like you?',
+      'Why are you being such a moron right now?',
+      'SMH……. WHAT!!!!!!',
+      'Please tell me, why??',
+      'Leave me alone!',
+      'One more question like that i’m ending this game.',
+      'I can’t with you right now. I just can’t.'
+    ];
+    var chosenNegativeArray = [Math.floor(Math.random() * negativeArray.length)];
+    console.log('negative answer');
+    return negativeArray[chosenNegativeArray] + ' ' + questionCounter;
+  } 
 }
 
 let handleQuery = function (event) {
@@ -35,7 +80,7 @@ let handleQuery = function (event) {
     responseContent.textContent = `Whatever, ${userSubmission}, let's get this show on the road, what are you 'questions'?`;
   } else {
     questionCounter--;
-    // userObjArray[0].questions.push(userSubmission);
+    percentageCalclulator(userSubmission);
     renderResponse();
   }
   if (questionCounter === 0) {
@@ -48,8 +93,7 @@ let handleQuery = function (event) {
     eightBall.classList.add('apply-shake');
     responseContent.classList.add('color-change');
   }
-
-  percentageCalclulator(userSubmission);
+  console.log(`user score is: ${userObjArray[0].score}`);
   userQueryHandler(); // reset the animation
 };
 
