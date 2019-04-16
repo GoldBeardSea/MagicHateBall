@@ -10,6 +10,7 @@ function User(name) {
   this.name = name;
   this.score = 0;
   this.questions = [];
+  this.key = 'eight';
   userObjArray.push(this);
 }
 
@@ -37,6 +38,7 @@ let handleQuery = function (event) {
     renderResponse();
   }
   if (questionCounter === 0) {
+
     // renderResultsList();
   }
   console.log('this is userquery '+userQuery.value);
@@ -45,6 +47,10 @@ let handleQuery = function (event) {
   // added for eight ball animation
   if(userSubmission !== 'undefined'){
     eightBall.classList.add('apply-shake');
+    localStorage.setItem('endState', JSON.stringify(userObjArray));
+    questionCounter = 9;
+    window.location.href = 'results.html';
+
   }
 
   eightBall.classList.remove('apply-shake');
@@ -66,5 +72,3 @@ function renderResponse() {
 document.getElementById('submit').addEventListener('click', handleQuery);
 // userQuery.addEventListener('animationend', handleQuery);
 
-
-// renderResultsList();
