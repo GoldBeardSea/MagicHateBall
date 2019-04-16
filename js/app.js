@@ -41,7 +41,6 @@ let handleQuery = function (event) {
     localStorage.setItem('endState', JSON.stringify(userObjArray));
     questionCounter = 9;
     window.location.href = 'results.html';
-    renderResultsList();
   }
   // added for eight ball animation
   if(userSubmission !== 'undefined'){
@@ -55,15 +54,6 @@ let handleQuery = function (event) {
 function renderResponse() {
   let responseContent = document.getElementById('hateballResponse');
   responseContent.textContent = choiceGenerator();
-}
-
-function renderResultsList() {
-  let ulEl = document.getElementById('renderHate');
-  for (let i in userObjArray[0].questions) {
-    let liEl = document.createElement('li');
-    liEl.textContent = userObjArray[0].questions[i];
-    ulEl.appendChild(liEl);
-  }
 }
 
 // Game Logic:
@@ -111,13 +101,6 @@ let userQueryHandler = function(event){
 };
 //Execute on Load:
 randomMagicWord();
-// function renderResultsList() {
-//   let ulEl = document.getElementById('renderHate');
-//   for (let i in userObjArray[0].questions) {
-//     let liEl = document.createElement('li');
-//     liEl.textContent = userObjArray[0].questions[i];
-//     ulEl.appendChild(liEl);
-//   }
-// }
+
 document.getElementById('submit').addEventListener('click', handleQuery);
 userQuery.addEventListener('change', userQueryHandler);
