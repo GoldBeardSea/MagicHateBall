@@ -3,7 +3,6 @@
 const userObjArray = JSON.parse(localStorage.getItem('endState'));
 let userQuery = document.getElementById('anagramQuery');
 var anagramGratzBox = document.getElementById('anagramGratzBox');
-var anagramGratzText = document.getElementById('anagramGratzText');
 var anagramForm = document.getElementById('anagramForm');
 
 var anagramCounter = 3;
@@ -40,6 +39,8 @@ function renderResultsList() {
 let anagramQuery = function (event) {
   event.preventDefault();
 
+  var anagramGratzText = document.getElementById('anagramGratzText');
+  var tryAgainButton = document.getElementById('tryAgain');
 
   let userGuess = userQuery.value;
   let correctAnswer = userObjArray[0].key;
@@ -51,16 +52,25 @@ let anagramQuery = function (event) {
     anagramForm.style.display = 'none';
     anagramGratzText.textContent = 'Huh. You got it right.';
     anagramGratzBox.style.backgroundColor = '#1ca73a';
-    //decrement count, update counter element
+    tryAgainButton.style.display = 'none';
+    anagramCounter--;
   } else {
     anagramGratzBox.style.display = 'block';
     anagramForm.style.display = 'none';
     anagramGratzText.textContent = 'Ha! Wrong.';
     anagramGratzBox.style.backgroundColor = '#d42a2a';
-    //decrement count, update counter element
+    anagramCounter--;
+
+    //Show button or sorry depending on counter
+    if (anagramCounter === 0 || anagramCounter < 0 ){
+      anagramGratzText.textContent += ' No More Attempts';
+      tryAgainButton.style.display = 'none';
+    } else {
+      anagramGratzText.textContent += ` ${anagramCounter} attempts remaining`;
+    }
   }
 
-  //Show button or sorry depending on counter
+
 
 };
 
