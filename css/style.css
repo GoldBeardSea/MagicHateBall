@@ -59,12 +59,12 @@ img {
 }
 
 progress {
-  background-color: black;
+  /* background-color: black; */
   display: block;
   background: none;
   /* color: red; */
   margin: 0px auto;
-  transform: rotate(270deg);
+  transform: rotate(90deg);
   float: right;
   position: absolute;
   top: 550px;
@@ -79,21 +79,14 @@ progress {
   font-size: 15px;
 }
 
-progress::after{
-  margin: -25px 0 0 -32px;
-  padding: 0;
-  display: inline-block;
-  float: left;
-  content: attr(value)'%';
-  
-}
 
 progress::-webkit-progress-bar {
-  background-color: black;
-
+  background-color: red;
+  border-radius: 5px;
 }
 progress::-webkit-progress-value {
-  background-color: red;
+  background-color: black;
+  border-radius: 5px;
 }
 
 #question-remaining-section {
