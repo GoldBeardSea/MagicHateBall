@@ -43,12 +43,15 @@
       <div class="gameContainer">
         <img id='eightball' src="./img/eightball.png" alt="Magic Eight Ball" title="Magic Eight Ball">
         <p id='hateballResponse' style="color:white"></p>
-        <form action="submit">
-          <textarea name="userQuestion" id="userQuestion" cols="30" rows="1"></textarea>
+
+        <form id="question-form" action="submit">
+          <input type="text" name="userQuestions" id="userQuestion">
+
           <input type="submit" value='Submit' id='submit' class="buttons">
         </form>
+        <a onclick="gameOver()" class="buttons" id="proceed">Proceed</a>
       </div>
-      <progress value="0" max="100" id="rageBar">%</progress>
+      <progress value="100" max="100" id="rageBar">%</progress>
     </section>
   </main>
   <footer>
