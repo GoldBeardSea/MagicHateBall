@@ -220,8 +220,13 @@ li img {
   max-width: 275px;
   max-height: 275px;
   overflow: hidden;
+  border-radius: 50%;
 }
 
 .name {
   font-size: 2em; 
+}
+
+#aboutus {
+  font-family: 'Yatra One', cursive;
 }
