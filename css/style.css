@@ -217,8 +217,9 @@ fieldset {
 }
 
 li img {
-  max-width: 250px;
-  max-height: 250px;
+  max-width: 275px;
+  max-height: 275px;
+  overflow: hidden;
 }
 
 .name {

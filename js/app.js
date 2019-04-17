@@ -100,10 +100,6 @@ let handleQuery = function (event) {
   renderQuestionCounter();
   console.log(`user score is: ${userObjArray[0].score}`);
   resetAnimation(); // reset the animation
-<<<<<<< HEAD
-
-=======
->>>>>>> c6ab5a6f2c67bf7205e866fd629179b4b7b1dd04
 };
 
 function renderResponse() {
