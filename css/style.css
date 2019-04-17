@@ -125,6 +125,14 @@ progress::-webkit-progress-value {
   margin-bottom: 10px;
 }
 
+#proceed {
+  display: none;
+  margin: 0px auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  max-width: 80px;
+}
+
 .buttons {
   background-color: darkblue;
   color: whitesmoke;

@@ -17,7 +17,6 @@ function scrambleWord(word){
   return scrambled;
 }
 
-
 // this amends the list
 function renderResultsList() {
   console.log(userObjArray);
@@ -31,7 +30,6 @@ function renderResultsList() {
   var scrambledKey = scrambleWord(userObjArray[0].key);
   pEl.textContent = scrambledKey;
 }
-renderResultsList();
 
 //this anagramQuery handles
 let anagramQuery = function (event) {
@@ -43,11 +41,13 @@ let anagramQuery = function (event) {
     alert('You suck I can\'t even look at you right now!');
   }
 };
+
 let playAgain = function(event){
   event.preventDefault();
   localStorage.clear();
   window.location.replace('index.html');
 };
 
+renderResultsList();
 document.getElementById('anagramSubmit').addEventListener('click', anagramQuery);
 document.getElementById('playAgain').addEventListener('click', playAgain);
