@@ -5,13 +5,15 @@ let userQuery = document.getElementById('anagramQuery');
 
 function scrambleWord(word){
   var unscrambled = word.split('');
-  for(var i = word.length - 1; i > 0; i--){
-    var scramble = Math.floor(Math.random() * (i + 1));
-    var temp = unscrambled[i];
-    unscrambled[i] = unscrambled[scramble];
-    unscrambled[scramble] = temp;
-  }
-  var scrambled = unscrambled.join('');
+  do{
+    for(var i = word.length - 1; i > 0; i--){
+      var scramble = Math.floor(Math.random() * (i + 1));
+      var temp = unscrambled[i];
+      unscrambled[i] = unscrambled[scramble];
+      unscrambled[scramble] = temp;
+    }
+    var scrambled = unscrambled.join('');
+  } while(word === scrambled);
   return scrambled;
 }
 
@@ -28,7 +30,8 @@ function renderResultsList() {
   let pEl = document.getElementById('anagramResult');
   var scrambledKey = scrambleWord(userObjArray[0].key);
   pEl.textContent = scrambledKey;
-} renderResultsList();
+}
+renderResultsList();
 
 //this anagramQuery handles
 let anagramQuery = function (event) {
@@ -37,9 +40,14 @@ let anagramQuery = function (event) {
   if (condition === userObjArray[0].key) {
     alert('You got it');
   } else {
-    //code here for failure
+    alert('You suck I can\'t even look at you right now!');
   }
-
+};
+let playAgain = function(event){
+  event.preventDefault();
+  localStorage.clear();
+  window.location.replace('index.html');
 };
 
 document.getElementById('anagramSubmit').addEventListener('click', anagramQuery);
+document.getElementById('playAgain').addEventListener('click', playAgain);
