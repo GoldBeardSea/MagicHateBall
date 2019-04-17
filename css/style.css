@@ -58,11 +58,13 @@ img {
 }
 
 #question-remaining-section {
+  position: absolute;
+  top: 400px;
+  left: 150px;
   float: left;
   max-width: 100px;
   margin: 0px auto;
   text-align: center;
-  z-index: 2;
 }
 
 #hateballResponse {

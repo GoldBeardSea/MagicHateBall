@@ -32,7 +32,7 @@ function choiceGenerator() {
     ];
     var chosenPositiveArray = [Math.floor(Math.random() * positiveArray.length)];
     console.log('positive answer');
-    return positiveArray[chosenPositiveArray] + ' ' + questionCounter;
+    return positiveArray[chosenPositiveArray];
   }else if(userObjArray[0].score >= 40){
     //neutral
     var neutralArray = [
@@ -49,7 +49,7 @@ function choiceGenerator() {
     ];
     var chosenNeutralArray = [Math.floor(Math.random() * neutralArray.length)];
     console.log('neutral answer');
-    return neutralArray[chosenNeutralArray] + ' ' + questionCounter;
+    return neutralArray[chosenNeutralArray];
   }else if(userObjArray[0].score >= 0){
     //negative
     var negativeArray = [
@@ -66,7 +66,7 @@ function choiceGenerator() {
     ];
     var chosenNegativeArray = [Math.floor(Math.random() * negativeArray.length)];
     console.log('negative answer');
-    return negativeArray[chosenNegativeArray] + ' ' + questionCounter;
+    return negativeArray[chosenNegativeArray];
   } 
 }
 
@@ -94,6 +94,7 @@ let handleQuery = function (event) {
     responseContent.classList.add('color-change');
   }
   userQuery.value = null;
+  renderQuestionCounter();
   console.log(`user score is: ${userObjArray[0].score}`);
   userQueryHandler(); // reset the animation
   
@@ -101,6 +102,11 @@ let handleQuery = function (event) {
 
 function renderResponse() {
   responseContent.textContent = choiceGenerator();
+}
+
+function renderQuestionCounter() {
+  var counterEl = document.getElementById('question-counter');
+  counterEl.textContent = questionCounter;
 }
 
 // Game Logic:
