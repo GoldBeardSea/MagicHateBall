@@ -166,6 +166,20 @@ fieldset {
   text-decoration: none;
 }
 
+#anagramGratzBox {
+  display: none;
+  width: 900px;
+  height: 120px;
+  margin: 0px auto;
+  margin-bottom: 20px;
+  background-color: #d42a2a;
+}
+
+#anagramGratzText {
+  text-align: center;
+  padding: 15px;
+} 
+
 /* Styling for AboutUs page only */
 .aboutUs {
   margin: 0px auto;
