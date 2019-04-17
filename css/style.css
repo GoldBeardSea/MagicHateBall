@@ -111,10 +111,12 @@ progress::-webkit-progress-value {
 
 #hateballResponse {
   position: absolute;
-  top: 30%;
-  left: 43%;
+  top: 145px;
+  left: 420px;
   word-wrap: break-word;
+  text-align: center;
   width: 125px;
+  height: 100px;
 }
 
 #userQuestion {
