@@ -96,13 +96,22 @@ progress::-webkit-progress-value {
   background-color: red;
 }
 
+#question-remaining-section {
+  position: absolute;
+  top: 400px;
+  left: 150px;
+  float: left;
+  max-width: 100px;
+  margin: 0px auto;
+  text-align: center;
+}
 
 #hateballResponse {
   position: absolute;
-  top: 25%;
-  left: 45%;
+  top: 30%;
+  left: 43%;
   word-wrap: break-word;
-  width: 100px;
+  width: 125px;
 }
 
 #userQuestion {
@@ -138,6 +147,10 @@ footer {
 /* Styling for Results page only */
 fieldset {
   margin: 10px;
+}
+#playAgain a {
+  color: white;
+  text-decoration: none;
 }
 
 /* Styling for AboutUs page only */

@@ -32,7 +32,7 @@ function choiceGenerator() {
     ];
     var chosenPositiveArray = [Math.floor(Math.random() * positiveArray.length)];
     console.log('positive answer');
-    return positiveArray[chosenPositiveArray] + ' ' + questionCounter;
+    return positiveArray[chosenPositiveArray];
   }else if(userObjArray[0].score >= 40){
     //neutral
     var neutralArray = [
@@ -49,7 +49,7 @@ function choiceGenerator() {
     ];
     var chosenNeutralArray = [Math.floor(Math.random() * neutralArray.length)];
     console.log('neutral answer');
-    return neutralArray[chosenNeutralArray] + ' ' + questionCounter;
+    return neutralArray[chosenNeutralArray];
   }else if(userObjArray[0].score >= 0){
     //negative
     var negativeArray = [
@@ -66,7 +66,7 @@ function choiceGenerator() {
     ];
     var chosenNegativeArray = [Math.floor(Math.random() * negativeArray.length)];
     console.log('negative answer');
-    return negativeArray[chosenNegativeArray] + ' ' + questionCounter;
+    return negativeArray[chosenNegativeArray];
   } 
 }
 
@@ -89,19 +89,25 @@ let handleQuery = function (event) {
     questionCounter = 9;
     window.location.href = 'results.html';
   }
+
   // added for eight ball animation
   if(userSubmission !== 'undefined'){
-    eightBall.classList.add('apply-shake');
-    responseContent.classList.add('color-change');
+    playAnimation();
   }
   userQuery.value = null;
+  renderQuestionCounter();
   console.log(`user score is: ${userObjArray[0].score}`);
-  userQueryHandler(); // reset the animation
+  resetAnimation(); // reset the animation
   
 };
 
 function renderResponse() {
   responseContent.textContent = choiceGenerator();
+}
+
+function renderQuestionCounter() {
+  var counterEl = document.getElementById('question-counter');
+  counterEl.textContent = questionCounter;
 }
 
 // Game Logic:
@@ -139,22 +145,33 @@ function randomMagicWord() {
 
   console.log(`Magic words length: ${magicWords.length}`);
   thisRoundMagicWord = magicWords[Math.floor(Math.random() * magicWords.length)];
-  
+
   console.log(`thisRoundMagicWord: ${thisRoundMagicWord}`);
 }
 // function to reset the animation
-let userQueryHandler = function(event){
+let resetAnimation = function(event){
   event.preventDefault();
   eightBall.classList.remove('apply-shake');
   responseContent.classList.remove('color-change');
+};
+let playAnimation = function(){
+  eightBall.classList.add('apply-shake');
+  responseContent.classList.add('color-change');
+};
+let yourNameQuestion = function(){
+  document.getElementById('hateballResponse').innerHTML = 'So, What is your name? .......Like I care anyways';
 };
 
 //Execute on Load:
 
 randomMagicWord();
+yourNameQuestion();
+playAnimation();
 
 document.getElementById('submit').addEventListener('click', handleQuery);
-userQuery.addEventListener('change', userQueryHandler);
+
+userQuery.addEventListener('change', resetAnimation);
 document.getElementById('submit').addEventListener('click', function(){
   document.getElementById('rageBar').value = userObjArray[0].score;
 });
+
