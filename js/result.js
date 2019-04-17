@@ -35,6 +35,7 @@ function renderResultsList() {
 let anagramQuery = function (event) {
   event.preventDefault();
   let condition = userQuery.value;
+  condition = condition.toLowerCase();
   if (condition === userObjArray[0].key) {
     alert('You got it');
   } else {
