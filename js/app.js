@@ -73,7 +73,7 @@ function choiceGenerator() {
 let handleQuery = function (event) {
   event.preventDefault();
   let userSubmission = userQuery.value;
-
+  userSubmission = userSubmission.toLowerCase();
   if (questionCounter > 8) {
     new User(userSubmission, thisRoundMagicWord);
     questionCounter--;
