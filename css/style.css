@@ -212,3 +212,33 @@ fieldset {
   animation-iteration-count: 1;
   animation-direction: normal;
 }
+
+.container {
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-around;
+
+}
+
+.ulItems {
+  width: 40%;
+  height: auto;
+
+}
+
+li img {
+  max-width: 275px;
+  max-height: 275px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.name {
+  font-size: 2em; 
+}
+
+#aboutus {
+  font-family: 'Yatra One', cursive;
+}
