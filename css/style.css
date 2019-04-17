@@ -155,4 +155,8 @@ fieldset {
 
 }
 
-.ul
+.ulItems {
+  width: 40%;
+  height: auto;
+  
+}
