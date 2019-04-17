@@ -145,3 +145,14 @@ fieldset {
   animation-iteration-count: 1;
   animation-direction: normal;
 }
+
+.container {
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-around;
+
+}
+
+.ul
