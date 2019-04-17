@@ -59,10 +59,10 @@ img {
 
 #hateballResponse {
   position: absolute;
-  top: 25%;
-  left: 45%;
+  top: 30%;
+  left: 43%;
   word-wrap: break-word;
-  width: 100px;
+  width: 125px;
 }
 
 #userQuestion {
@@ -97,6 +97,10 @@ footer {
 /* Styling for Results page only */
 fieldset {
   margin: 10px;
+}
+#playAgain a {
+  color: white;
+  text-decoration: none;
 }
 
 /* Styling for AboutUs page only */

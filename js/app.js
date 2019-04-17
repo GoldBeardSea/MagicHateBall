@@ -88,14 +88,14 @@ let handleQuery = function (event) {
     questionCounter = 9;
     window.location.href = 'results.html';
   }
+
   // added for eight ball animation
   if(userSubmission !== 'undefined'){
-    eightBall.classList.add('apply-shake');
-    responseContent.classList.add('color-change');
+    playAnimation();
   }
   userQuery.value = null;
   console.log(`user score is: ${userObjArray[0].score}`);
-  userQueryHandler(); // reset the animation
+  resetAnimation(); // reset the animation
   
 };
 
@@ -142,14 +142,23 @@ function randomMagicWord() {
   console.log(`thisRoundMagicWord: ${thisRoundMagicWord}`);
 }
 // function to reset the animation
-let userQueryHandler = function(event){
+let resetAnimation = function(event){
   event.preventDefault();
   eightBall.classList.remove('apply-shake');
   responseContent.classList.remove('color-change');
 };
+let playAnimation = function(){
+  eightBall.classList.add('apply-shake');
+  responseContent.classList.add('color-change');
+};
+let yourNameQuestion = function(){
+  document.getElementById('hateballResponse').innerHTML = 'So, What is your name? .......Like I care anyways';
+};
 
 //Execute on Load:
 randomMagicWord();
+yourNameQuestion();
+playAnimation();
 
 document.getElementById('submit').addEventListener('click', handleQuery);
-userQuery.addEventListener('change', userQueryHandler);
+userQuery.addEventListener('change', resetAnimation);
