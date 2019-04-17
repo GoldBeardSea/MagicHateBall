@@ -212,5 +212,14 @@ fieldset {
 .ulItems {
   width: 40%;
   height: auto;
-  
+
+}
+
+li img {
+  max-width: 250px;
+  max-height: 250px;
+}
+
+.name {
+  font-size: 2em; 
 }

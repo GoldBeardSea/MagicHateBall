@@ -67,13 +67,13 @@ function choiceGenerator() {
     var chosenNegativeArray = [Math.floor(Math.random() * negativeArray.length)];
     console.log('negative answer');
     return negativeArray[chosenNegativeArray];
-  } 
+  }
 }
 
 let handleQuery = function (event) {
   event.preventDefault();
   let userSubmission = userQuery.value;
-  
+
   if (questionCounter > 8) {
     new User(userSubmission, thisRoundMagicWord);
     questionCounter--;
@@ -82,7 +82,7 @@ let handleQuery = function (event) {
     questionCounter--;
     percentageCalclulator(userSubmission);
     renderResponse();
-    
+
   }
   if (questionCounter === 0) {
     localStorage.setItem('endState', JSON.stringify(userObjArray)); //added rage meter here
@@ -98,7 +98,7 @@ let handleQuery = function (event) {
   renderQuestionCounter();
   console.log(`user score is: ${userObjArray[0].score}`);
   resetAnimation(); // reset the animation
-  
+
 };
 
 function renderResponse() {
