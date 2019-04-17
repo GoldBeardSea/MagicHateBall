@@ -67,27 +67,29 @@ function choiceGenerator() {
     var chosenNegativeArray = [Math.floor(Math.random() * negativeArray.length)];
     console.log('negative answer');
     return negativeArray[chosenNegativeArray];
-  } 
+  }
 }
 
 let handleQuery = function (event) {
   event.preventDefault();
   let userSubmission = userQuery.value;
-  
+
   if (questionCounter > 8) {
     new User(userSubmission, thisRoundMagicWord);
     questionCounter--;
-    responseContent.textContent = `Whatever, ${userSubmission}, let's get this show on the road, what are you 'questions'?`;
+    responseContent.textContent = `Whatever, ${userSubmission}, let's get this show on the road. What are your 'questions'?`;
   } else {
     questionCounter--;
     percentageCalclulator(userSubmission);
     renderResponse();
-    
+
   }
   if (questionCounter === 0) {
-    localStorage.setItem('endState', JSON.stringify(userObjArray)); //added rage meter here
-    questionCounter = 9;
-    window.location.href = 'results.html';
+    var proceedButton = document.getElementById('proceed');
+    var questionForm = document.getElementById('question-form');
+
+    proceedButton.style.display = 'block';
+    questionForm.style.display = 'none';
   }
 
   // added for eight ball animation
@@ -98,7 +100,6 @@ let handleQuery = function (event) {
   renderQuestionCounter();
   console.log(`user score is: ${userObjArray[0].score}`);
   resetAnimation(); // reset the animation
-  
 };
 
 function renderResponse() {
@@ -154,13 +155,22 @@ let resetAnimation = function(event){
   eightBall.classList.remove('apply-shake');
   responseContent.classList.remove('color-change');
 };
+
 let playAnimation = function(){
   eightBall.classList.add('apply-shake');
   responseContent.classList.add('color-change');
 };
+
 let yourNameQuestion = function(){
   document.getElementById('hateballResponse').innerHTML = 'So, What is your name? .......Like I care anyways';
 };
+
+//Called directly from the Proceed button in html
+function gameOver(){
+  localStorage.setItem('endState', JSON.stringify(userObjArray));
+  questionCounter = 9;
+  window.location.href = 'results.html';
+}
 
 //Execute on Load:
 
