@@ -71,9 +71,9 @@ function choiceGenerator() {
 }
 
 let handleQuery = function (event) {
-
   event.preventDefault();
   let userSubmission = userQuery.value;
+  
   if (questionCounter > 8) {
     new User(userSubmission, thisRoundMagicWord);
     questionCounter--;
@@ -82,9 +82,10 @@ let handleQuery = function (event) {
     questionCounter--;
     percentageCalclulator(userSubmission);
     renderResponse();
+    
   }
   if (questionCounter === 0) {
-    localStorage.setItem('endState', JSON.stringify(userObjArray));
+    localStorage.setItem('endState', JSON.stringify(userObjArray)); //added rage meter here
     questionCounter = 9;
     window.location.href = 'results.html';
   }
@@ -162,9 +163,15 @@ let yourNameQuestion = function(){
 };
 
 //Execute on Load:
+
 randomMagicWord();
 yourNameQuestion();
 playAnimation();
 
 document.getElementById('submit').addEventListener('click', handleQuery);
+
 userQuery.addEventListener('change', resetAnimation);
+document.getElementById('submit').addEventListener('click', function(){
+  document.getElementById('rageBar').value = userObjArray[0].score;
+});
+
