@@ -138,7 +138,7 @@ function randomMagicWord() {
 
   console.log(`Magic words length: ${magicWords.length}`);
   thisRoundMagicWord = magicWords[Math.floor(Math.random() * magicWords.length)];
-  
+
   console.log(`thisRoundMagicWord: ${thisRoundMagicWord}`);
 }
 // function to reset the animation

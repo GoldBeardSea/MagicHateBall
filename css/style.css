@@ -57,6 +57,14 @@ img {
   position: relative;
 }
 
+#question-remaining-section {
+  float: left;
+  max-width: 100px;
+  margin: 0px auto;
+  text-align: center;
+  z-index: 2;
+}
+
 #hateballResponse {
   position: absolute;
   top: 25%;
