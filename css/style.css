@@ -6,30 +6,45 @@ Dim Gray: #565656
 Black: #050505
 */
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+@import url('https://fonts.googleapis.com/css?family=Neucha');
 /* Body affecting styling */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #565656;
-  color: white;
+  /* background-color: #565656; */
+  background-image: url('/img/black-and-white-abstract-background-1520875246AFG.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:#ebd4cb;
 }
 
 /* Header styling */
 header {
-  background-color: #d42a2a;
-  color: #dedede;
+  background-color: #cf5c36;
+  color: #f4e3b2;
   width: 960px;
   margin: 0px auto;
   padding-top: 5px;
   text-align: center;
 }
-
+header h1{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 60px;
+  margin: 0;
+  text-shadow: 5px 5px #020202;
+}
+header h3{
+font-family: 'Neucha', cursive;
+}
 nav {
   background-color: #0d0d0e;
 }
 
 nav ul {
   list-style: none;
-  text-align: left;
+  text-align: center;
+  font-family: 'Bangers', cursive;
+  font-size: 30px;
 }
 
 nav ul li {
@@ -39,7 +54,7 @@ nav ul li {
 }
 
 ul a {
-  color: #b6b6b6;
+  color: #f4e3b2;
   text-decoration: none;
 }
 
@@ -56,6 +71,15 @@ main ul {
 
 main ul li {
   line-height: 1.5em;
+  font-family: 'Neucha', cursive;
+  font-size: 20px;
+}
+
+main h3{
+  font-family: 'Permanent Marker', cursive;
+  text-shadow: 2px 2px #0d0d0e;
+  font-size: 30px;
+  color: #cf5c36;
 }
 
 .gameContainer {
@@ -65,6 +89,7 @@ main ul li {
 img {
   width: 400px;
   position: relative;
+  text-shadow: 5px 5px lightgrey;
 }
 
 section {
@@ -98,7 +123,7 @@ progress {
   position: relative;
   font-family: 'Permanent Marker', cursive;
   font-size: 30px;
-  color: #d42a2a;
+  color: #cf5c36;
   text-shadow: 2px 2px #0d0d0e;
 }
 
@@ -124,12 +149,16 @@ progress::-webkit-progress-value {
 
 #hateballResponse {
   position: absolute;
-  top: 145px;
+  top: 125px;
   left: 420px;
   word-wrap: break-word;
   text-align: center;
   width: 125px;
   height: 100px;
+  font-family: 'Bangers', cursive;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #efc88b;
 }
 
 #userQuestion {
@@ -141,6 +170,8 @@ progress::-webkit-progress-value {
   margin: 0px auto;
   margin-top: 10px;
   margin-bottom: 10px;
+  font-size: 15px;
+  font-family: 'Permanent Marker', cursive;
 }
 
 #proceed {
@@ -153,7 +184,7 @@ progress::-webkit-progress-value {
 
 .buttons {
   background-color: #0d0d0e;
-  color: whitesmoke;
+  color:#cf5c36;
   border-radius: 10px;
   padding: 10px 15px;
   margin-bottom: 10px;
@@ -164,10 +195,10 @@ footer {
   clear: both;
   width: 960px;
   margin: 0px auto;
-  background-color: #0d0d0e;
+  background-color:#cf5c36;
   padding: 10px 0px;
   text-align: center;
-  color: whitesmoke;
+  color: #efc88b;
 }
 
 /* Styling for Results page only */
@@ -192,6 +223,16 @@ fieldset {
   text-align: center;
   padding: 15px;
 } 
+
+#anagramResult {
+  font-size: 50px;
+}
+
+#hintParagraph {
+  line-height: 1.5em;
+}
+
+
 
 /* Styling for AboutUs page only */
 .aboutUs {
