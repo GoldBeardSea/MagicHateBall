@@ -193,6 +193,10 @@ fieldset {
   padding: 15px;
 } 
 
+#anagramResult {
+  font-size: 50px;
+}
+
 /* Styling for AboutUs page only */
 .aboutUs {
   margin: 0px auto;
