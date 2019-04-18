@@ -7,7 +7,9 @@ var anagramGratzText = document.getElementById('anagramGratzText');
 var anagramForm = document.getElementById('anagramForm');
 var tryAgainButton = document.getElementById('tryAgain');
 let winAudio = new Audio('../audio/win.wav');
+winAudio.volume = .5;
 let loseAudio = new Audio('../audio/fail.wav');
+loseAudio.volume = .5;
 
 var anagramCounter = 3;
 
