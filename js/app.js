@@ -138,10 +138,13 @@ function percentageCalclulator (questionString){
     userObjArray[0].score = currentScore;
   } else {
     userObjArray[0].score = Math.round((userObjArray[0].score + currentScore) / 2);
-    if(userObjArray[0].score < 5){
-      console.log('hits rage quit');
-      alert('RAGE QUIT!!!!');
-      gameOver();
+    if(userObjArray[0].score < 25){
+      userObjArray[0].score = 0;
+      window.setTimeout(function(){
+        console.log('hits rage quit');
+        alert('RAGE QUIT!!!!');
+        gameOver();
+      }, 300);
     }
   }
  
