@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/reset.css" type="text/css">
+  <link href="./css/style.css" rel="stylesheet" type="text/css" />
+  <title>Magic Hate Ball</title>
+</head>
+<body>
+  <header>
+      <h1>Magic Hate Ball</h1>
+      <h3>The Grumpy Cat of 8-Balls</h3>
+    <nav>
+      <ul>
+        <li><a href="index.html">Game</a></li>
+        <li><a href="results.html">Result</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>  
+  <main>
+    <h3>You dare question the Magic Hate Ball?</h3>
+    <div id='instruction'>
+      <ul>
+        <li>Enter your burning questions, see if the Hate Ball will deign to answer</li>
+        <li>Be careful though, too many stupid questions and the Hate Ball will be done with you.</li>
+      </ul>
+    </div>
+    <section>
+      <div class="gameContainer">
+          <ul id="question-remaining-section">
+              <li>
+                Questions Remaining:
+              </li>
+              <li id="question-counter">
+                8
+              </li>
+            </ul>
+        <img id='eightball' src="./img/eightball.png" alt="Magic Eight Ball" title="Magic Eight Ball">
+        <p id='hateballResponse' style="color:white"></p>
+
+        <form id="question-form" action="submit">
+          <input type="text" name="userQuestions" id="userQuestion">
+
+          <input type="submit" value='Submit' id='submit' class="buttons">
+        </form>
+        <a onclick="gameOver()" class="buttons" id="proceed">Proceed</a>
+        <p id="hate-meter-footer">Hate Meter</p>
+        <progress value="100" max="100" id="rageBar"></progress>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>This has been a production by: Anthony, Paula, Timothy, William</p>
+  </footer>
+<script src="./js/app.js"></script>
+</body>
+</html>
