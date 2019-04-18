@@ -6,6 +6,7 @@ var eightBall = document.getElementById('eightball'); //added for animation for 
 let responseContent = document.getElementById('hateballResponse');
 var questionCounter = 9;
 var thisRoundMagicWord;
+let shake = new Audio('../audio/shake.wav');
 
 function User(name, key) {
   this.name = name;
@@ -94,6 +95,7 @@ let handleQuery = function (event) {
 
   // added for eight ball animation
   if(userSubmission !== 'undefined'){
+    shake.play();
     playAnimation();
   }
   userQuery.value = null;
@@ -147,7 +149,7 @@ function percentageCalclulator (questionString){
       }, 300);
     }
   }
- 
+
 }
 
 function randomMagicWord() {
@@ -167,6 +169,7 @@ let resetAnimation = function(event){
 
 let playAnimation = function(){
   eightBall.classList.add('apply-shake');
+  shake.play();
   responseContent.classList.add('color-change');
 };
 
