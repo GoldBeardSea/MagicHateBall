@@ -77,6 +77,7 @@ let handleQuery = function (event) {
     new User(userSubmission, thisRoundMagicWord);
     questionCounter--;
     responseContent.textContent = `Whatever, ${userSubmission}, let's get this show on the road. What are your 'questions'?`;
+    document.getElementById('userQuestion').placeholder = 'QUESTION';
   } else {
     userSubmission = userSubmission.toLowerCase();
     questionCounter--;
