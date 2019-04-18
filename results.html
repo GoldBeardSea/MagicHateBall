@@ -11,7 +11,7 @@
 <body>
   <header>
       <h1>Magic Hate Ball</h1>
-      <h3>The grumpy cat of 8-balls</h3>
+      <h3>The Grumpy Cat of 8-Balls</h3>
       <nav>
       <ul>
         <li><a href="index.html">Game</a></li>
@@ -21,24 +21,28 @@
     </nav>
   </header>  
   <main>
-    <h3>A recap of your misery...</h3>
+    <h3>A Recap of Your Misery...</h3>
     <ul id="renderHate">
 
     </ul>
-    <fieldset>
-      <legend>Can you guess the Hate balls hated word?</legend>
+    <fieldset id="anagramForm">
+      <legend>Something you said pushed the Hate Ball's buttons. Can you guess the Hate Ball's magic word?</legend>
         <form>
             <p id="anagramResult"></p>
-            <input id='anagramQuery' type="text">
+            <input id='anagramQuery' autocomplete="off" type="text">
             <button id="anagramSubmit" class="buttons">Check</button>
           </form>
     </fieldset>
+    <section id="anagramGratzBox">
+      <h2 id="anagramGratzText"></h2>
+      <a onclick="tryAnagramAgain()" class="buttons" id="tryAgain">Try Again</a>
+    </section>
 
     <!-- id = 'playAgain' Play Again/Button should clear Local Storage -->
-    <button id="playAgain" class="buttons">Play Again</button>
+    <button id="playAgain" class="buttons"><a href="index.html">Play Again</a></button>
   </main>
   <footer>
-
+    <p>This has been a production by: Anthony, Paula, Timothy, William</p>
   </footer>
   <script src='./js/result.js'></script>
 </body>

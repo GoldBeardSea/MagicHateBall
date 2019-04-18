@@ -6,12 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./css/reset.css" type="text/css">
   <link href="./css/style.css" rel="stylesheet" type="text/css" />
-  <title>About Us</title>
+  <link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet"> 
+  <title>About Us: the Hate Ball Team</title>
 </head>
-<body>
+<body id='aboutus'>
   <header>
     <h1>Magic Hate Ball</h1>
-    <h3>The grumpy cat of 8-balls</h3>
+    <h3>The Grumpy Cat of 8-Balls</h3>
     <nav>
       <ul>
         <li><a href="index.html">Game</a></li>
@@ -23,15 +24,40 @@
   <main>
     <h1>What is the Magic Hate Ball?</h1>
     <p id="aboutUsParagraph">The Magic Hate Ball is a project put together by a small band of Code Fellows students. We chose to make a twist on the traditional magic 8 ball to make it more interesting for users to engage. Our magic Hate Ball is a grumpy cat that is hard to please. Little do you know there is a secret to make this grumpy cat happy, and give you the answers you desire. You can learn more about this ragtag group below.</p>
-    <ul class="aboutUs">
-      <li>Anthony</li>
-      <li>Paula</li>
-      <li>Timothy</li>
-      <li>William</li>
-    </ul>
+    
+    <div class='container'>
+      <ul id="Anthony" class='ulItems'>
+        <li><img src="img/anthony.jpeg" alt="Anthony" onmouseover="this.src='img/eightball.png';" onmouseout="this.src='img/anthony.jpeg';"></li>
+        <li class='name'>Anthony Berry</li>
+        <li>Anthony is a Software Developer with college and coding bootcamp experience. He is originally from Augusta, GA, a down south Georgia boy, and loves seattle because of the technology industries here. He loves the challenges coding bring and wants to be a part of creating the future technologies rather than just being a consumer of technology.</li>
+        <li><a href="https://github.com/Antberry">Github</a></li>
+        <li><a href="https://www.linkedin.com/in/anthonyjberry1">LinkedIn</a></li>
+      </ul>
+      <ul id="Paula" class='ulItems'>
+        <li><img src="img/paula.jpg" alt="Paula" onmouseover="this.src='img/eightball.png';" onmouseout="this.src='img/paula.jpg';"></li>
+        <li class='name'>Paula Thomas</li>
+        <li>Paula is a Software Developer in Seattle, but that wasn't always the case. Originally from Spokane, she has moved across the country and occupied a wide range of industries. At the end of the day, she enjoys building things and/or supporting the people who build things. Fortunately, there is no better place to do that than in Software Development.</li>
+        <li><a href="https://github.com/Paula9T9">Github</a></li>
+        <li><a href="https://www.linkedin.com/in/paula-thomas">LinkedIn</a></li>
+      </ul>
+      <ul id="William" class='ulItems'>
+        <li><img src="img/william.jpg" alt="William" onmouseover="this.src='img/eightball.png';" onmouseout="this.src='img/william.jpg';"></li>
+        <li class='name'>William Fritts</li>
+        <li>William is a Software Developer with training from both traditional college and coding boot camps in addition to self-teaching through online platforms. Draws inspiration from science fiction and wants to help bring the future to us.</li>
+        <li><a href="https://github.com/wafman">Github</a></li>
+        <li><a href="https://www.linkedin.com/in/williamfritts/">LinkedIn</a></li>
+      </ul>
+      <ul id="Tim" class='ulItems'>
+          <li><img src="img/tim.jpg" alt="Tim" onmouseover="this.src='img/eightball.png';" onmouseout="this.src='img/tim.jpg';"></li>
+          <li class='name'>Tim Busch</li>
+          <li>Tim is from Seattle with a background in the Military, Music, and Finance. He started coding from a passion for combining music, art, and technology and enjoys the complicated technical challenges and creativity found in building applications.</li>
+          <li><a href="https://github.com/GoldBeardSea">Github</a></li>
+          <li><a href="https://www.linkedin.com/in/timothyjbusch">LinkedIn</a></li>
+      </ul>
+    </div>
   </main>
   <footer>
+    <p>This has been a production by: Anthony, Paula, Timothy, William</p>
   </footer>
-  
 </body>
 </html>

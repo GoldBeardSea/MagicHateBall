@@ -1,13 +1,22 @@
+/* Suggested Color Palette for picture 
+Navy: #040450
+Slate Gray: #666674
+Silver: #b6b6b6
+Dim Gray: #565656
+Black: #050505
+*/
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 /* Body affecting styling */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: lightblue;
+  background-color: #565656;
+  color: white;
 }
 
 /* Header styling */
 header {
-  background-color: darkblue;
-  color: whitesmoke;
+  background-color: #d42a2a;
+  color: #dedede;
   width: 960px;
   margin: 0px auto;
   padding-top: 5px;
@@ -15,7 +24,7 @@ header {
 }
 
 nav {
-  background-color: blue;
+  background-color: #0d0d0e;
 }
 
 nav ul {
@@ -30,7 +39,8 @@ nav ul li {
 }
 
 ul a {
-  color: whitesmoke;
+  color: #b6b6b6;
+  text-decoration: none;
 }
 
 /* Main element styling */
@@ -57,12 +67,69 @@ img {
   position: relative;
 }
 
+section {
+  position: relative;
+}
+
+progress {
+  display: block;
+  background: none;
+  margin: 0px auto;
+  transform: rotate(90deg);
+  float: right;
+  position: absolute;
+  top: 150px;
+  left: 750px;
+  height: 75px;
+  border-radius: 50px;
+  padding: 15px 0px 0px 0px;
+  text-align: left;
+  border: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+#hate-meter-footer{
+  display: block;
+  width: 50px;
+  margin: 0;
+  bottom: 200px;
+  right: 125px;
+  float: right;
+  position: relative;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 30px;
+  color: #d42a2a;
+  text-shadow: 2px 2px #0d0d0e;
+}
+
+
+progress::-webkit-progress-bar {
+  background-color: #d42a2a;
+  border-radius: 5px;
+}
+progress::-webkit-progress-value {
+  background-color: black;
+  border-radius: 5px;
+}
+
+#question-remaining-section {
+  position: absolute;
+  top: 150px;
+  left: 100px;
+  float: left;
+  max-width: 100px;
+  margin: 0px auto;
+  text-align: center;
+}
+
 #hateballResponse {
   position: absolute;
-  top: 25%;
-  left: 45%;
+  top: 145px;
+  left: 420px;
   word-wrap: break-word;
-  width: 100px;
+  text-align: center;
+  width: 125px;
+  height: 100px;
 }
 
 #userQuestion {
@@ -76,8 +143,16 @@ img {
   margin-bottom: 10px;
 }
 
+#proceed {
+  display: none;
+  margin: 0px auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  max-width: 80px;
+}
+
 .buttons {
-  background-color: darkblue;
+  background-color: #0d0d0e;
   color: whitesmoke;
   border-radius: 10px;
   padding: 10px 15px;
@@ -86,9 +161,10 @@ img {
 
 /* Footer styling */
 footer {
+  clear: both;
   width: 960px;
   margin: 0px auto;
-  background-color: darkblue;
+  background-color: #0d0d0e;
   padding: 10px 0px;
   text-align: center;
   color: whitesmoke;
@@ -98,6 +174,24 @@ footer {
 fieldset {
   margin: 10px;
 }
+#playAgain a {
+  color: white;
+  text-decoration: none;
+}
+
+#anagramGratzBox {
+  display: none;
+  width: 900px;
+  height: 120px;
+  margin: 0px auto;
+  margin-bottom: 20px;
+  background-color: #d42a2a;
+}
+
+#anagramGratzText {
+  text-align: center;
+  padding: 15px;
+} 
 
 /* Styling for AboutUs page only */
 .aboutUs {
@@ -144,4 +238,38 @@ fieldset {
   animation-duration: 10s;
   animation-iteration-count: 1;
   animation-direction: normal;
+}
+
+.container {
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-around;
+
+}
+
+.ulItems {
+  width: 40%;
+  height: auto;
+
+}
+
+li img {
+  max-width: 275px;
+  max-height: 275px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+li img:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.name {
+  font-size: 2em; 
+}
+
+#aboutus {
+  font-family: 'Yatra One', cursive;
 }

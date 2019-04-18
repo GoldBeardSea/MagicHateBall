@@ -9,7 +9,7 @@ var thisRoundMagicWord;
 
 function User(name, key) {
   this.name = name;
-  this.score = 0;
+  this.score = 100;
   this.questions = [];
   this.key = key;
   userObjArray.push(this);
@@ -32,7 +32,7 @@ function choiceGenerator() {
     ];
     var chosenPositiveArray = [Math.floor(Math.random() * positiveArray.length)];
     console.log('positive answer');
-    return positiveArray[chosenPositiveArray] + ' ' + questionCounter;
+    return positiveArray[chosenPositiveArray];
   }else if(userObjArray[0].score >= 40){
     //neutral
     var neutralArray = [
@@ -49,7 +49,7 @@ function choiceGenerator() {
     ];
     var chosenNeutralArray = [Math.floor(Math.random() * neutralArray.length)];
     console.log('neutral answer');
-    return neutralArray[chosenNeutralArray] + ' ' + questionCounter;
+    return neutralArray[chosenNeutralArray];
   }else if(userObjArray[0].score >= 0){
     //negative
     var negativeArray = [
@@ -66,41 +66,49 @@ function choiceGenerator() {
     ];
     var chosenNegativeArray = [Math.floor(Math.random() * negativeArray.length)];
     console.log('negative answer');
-    return negativeArray[chosenNegativeArray] + ' ' + questionCounter;
-  } 
+    return negativeArray[chosenNegativeArray];
+  }
 }
 
 let handleQuery = function (event) {
-
   event.preventDefault();
   let userSubmission = userQuery.value;
   if (questionCounter > 8) {
     new User(userSubmission, thisRoundMagicWord);
     questionCounter--;
-    responseContent.textContent = `Whatever, ${userSubmission}, let's get this show on the road, what are you 'questions'?`;
+    responseContent.textContent = `Whatever, ${userSubmission}, let's get this show on the road. What are your 'questions'?`;
   } else {
+    userSubmission = userSubmission.toLowerCase();
     questionCounter--;
     percentageCalclulator(userSubmission);
     renderResponse();
   }
+
   if (questionCounter === 0) {
-    localStorage.setItem('endState', JSON.stringify(userObjArray));
-    questionCounter = 9;
-    window.location.href = 'results.html';
+    var proceedButton = document.getElementById('proceed');
+    var questionForm = document.getElementById('question-form');
+
+    proceedButton.style.display = 'block';
+    questionForm.style.display = 'none';
   }
+
   // added for eight ball animation
   if(userSubmission !== 'undefined'){
-    eightBall.classList.add('apply-shake');
-    responseContent.classList.add('color-change');
+    playAnimation();
   }
   userQuery.value = null;
+  renderQuestionCounter();
   console.log(`user score is: ${userObjArray[0].score}`);
-  userQueryHandler(); // reset the animation
-  
+  resetAnimation(); // reset the animation
 };
 
 function renderResponse() {
   responseContent.textContent = choiceGenerator();
+}
+
+function renderQuestionCounter() {
+  var counterEl = document.getElementById('question-counter');
+  counterEl.textContent = questionCounter;
 }
 
 // Game Logic:
@@ -130,26 +138,59 @@ function percentageCalclulator (questionString){
     userObjArray[0].score = currentScore;
   } else {
     userObjArray[0].score = Math.round((userObjArray[0].score + currentScore) / 2);
+    if(userObjArray[0].score < 25){
+      userObjArray[0].score = 0;
+      window.setTimeout(function(){
+        console.log('hits rage quit');
+        alert('RAGE QUIT!!!!');
+        gameOver();
+      }, 300);
+    }
   }
+ 
 }
 
 function randomMagicWord() {
-  var magicWords = ['eight', 'hate','irate','angry','pear', 'spite','insult','injury'];
+  var magicWords = ['eight', 'hate','irate','angry','annoyance', 'spite','insult','injury'];
 
   console.log(`Magic words length: ${magicWords.length}`);
   thisRoundMagicWord = magicWords[Math.floor(Math.random() * magicWords.length)];
-  
+
   console.log(`thisRoundMagicWord: ${thisRoundMagicWord}`);
 }
 // function to reset the animation
-let userQueryHandler = function(event){
+let resetAnimation = function(event){
   event.preventDefault();
   eightBall.classList.remove('apply-shake');
   responseContent.classList.remove('color-change');
 };
 
+let playAnimation = function(){
+  eightBall.classList.add('apply-shake');
+  responseContent.classList.add('color-change');
+};
+
+let yourNameQuestion = function(){
+  document.getElementById('hateballResponse').innerHTML = 'So, what is your name? .......Like I care anyways';
+};
+
+//Called directly from the Proceed button in html
+function gameOver(){
+  localStorage.setItem('endState', JSON.stringify(userObjArray));
+  questionCounter = 9;
+  window.location.href = 'results.html';
+}
+
 //Execute on Load:
+
 randomMagicWord();
+yourNameQuestion();
+playAnimation();
 
 document.getElementById('submit').addEventListener('click', handleQuery);
-userQuery.addEventListener('change', userQueryHandler);
+
+userQuery.addEventListener('change', resetAnimation);
+document.getElementById('submit').addEventListener('click', function(){
+  document.getElementById('rageBar').value = userObjArray[0].score;
+});
+

@@ -11,7 +11,7 @@
 <body>
   <header>
       <h1>Magic Hate Ball</h1>
-      <h3>The grumpy cat of 8-balls</h3>
+      <h3>The Grumpy Cat of 8-Balls</h3>
     <nav>
       <ul>
         <li><a href="index.html">Game</a></li>
@@ -25,22 +25,31 @@
     <div id='instruction'>
       <ul>
         <li>Enter your burning questions, see if the Hate Ball will deign to answer</li>
-        <li>Be careful though, too many stupid questions and the Hate Ball will be done with you</li>
-        <li>But first, what is your name?</li>
+        <li>Be careful though, too many stupid questions and the Hate Ball will be done with you.</li>
       </ul>
     </div>
     <section>
-      
       <div class="gameContainer">
+          <ul id="question-remaining-section">
+              <li>
+                Questions Remaining:
+              </li>
+              <li id="question-counter">
+                8
+              </li>
+            </ul>
         <img id='eightball' src="./img/eightball.png" alt="Magic Eight Ball" title="Magic Eight Ball">
-        <p id='hateballResponse'>Fuck you</p>
-        <form action="submit">
-          <textarea name="userQuestion" id="userQuestion" cols="30" rows="1"></textarea>
+        <p id='hateballResponse' style="color:white"></p>
+
+        <form id="question-form" action="submit">
+          <input type="text" name="userQuestions" id="userQuestion">
+
           <input type="submit" value='Submit' id='submit' class="buttons">
         </form>
+        <a onclick="gameOver()" class="buttons" id="proceed">Proceed</a>
+        <p id="hate-meter-footer">Hate Meter</p>
+        <progress value="100" max="100" id="rageBar"></progress>
       </div>
-      <!-- Todo Rage Meter -->
-      <!-- <canvas>Scaffolding for Tomorrow</canvas> -->
     </section>
   </main>
   <footer>
