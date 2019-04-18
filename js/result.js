@@ -35,7 +35,7 @@ function renderAnagram() {
   let pEl = document.getElementById('anagramResult');
   var scrambledKey = scrambleWord(userObjArray[0].key);
   pEl.textContent = scrambledKey;
-  
+
 }
 
 //this anagramQuery handles
