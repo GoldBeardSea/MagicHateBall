@@ -6,6 +6,9 @@ var eightBall = document.getElementById('eightball'); //added for animation for 
 let responseContent = document.getElementById('hateballResponse');
 var questionCounter = 9;
 var thisRoundMagicWord;
+var responseArray = [];
+var previousArray = [];
+var magicWords = ['eight', 'hate','irate','angry','annoyance', 'spite','insult','injury'];
 
 function User(name, key) {
   this.name = name;
@@ -104,7 +107,13 @@ let handleQuery = function (event) {
 };
 
 function renderResponse() {
-  responseContent.textContent = choiceGenerator();
+  let response;
+  do {
+    response = choiceGenerator();
+  } while (responseArray.includes(response));
+  console.log(response);
+  responseArray.push(response);
+  responseContent.textContent = response;
 }
 
 function renderQuestionCounter() {
@@ -151,12 +160,11 @@ function percentageCalclulator (questionString){
  
 }
 
-function randomMagicWord() {
-  var magicWords = ['eight', 'hate','irate','angry','annoyance', 'spite','insult','injury'];
 
+
+function randomMagicWord() {
   console.log(`Magic words length: ${magicWords.length}`);
   thisRoundMagicWord = magicWords[Math.floor(Math.random() * magicWords.length)];
-
   console.log(`thisRoundMagicWord: ${thisRoundMagicWord}`);
 }
 // function to reset the animation
