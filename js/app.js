@@ -134,6 +134,8 @@ function percentageCalclulator (questionString){
   userObjArray[0].questions.push(questionString);
   currentScore = Math.round((matchingLetters / questionString.length) * 100);
 
+ 
+
   if (userObjArray[0].score === 0){
     userObjArray[0].score = currentScore;
   } else {
