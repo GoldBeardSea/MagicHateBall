@@ -1,7 +1,12 @@
 'use strict';
 
+
 const userObjArray = JSON.parse(localStorage.getItem('endState'));
 let userQuery = document.getElementById('anagramQuery');
+var anagramGratzBox = document.getElementById('anagramGratzBox');
+var anagramForm = document.getElementById('anagramForm');
+
+var anagramCounter = 3;
 
 function scrambleWord(word){
   var unscrambled = word.split('');
@@ -34,14 +39,47 @@ function renderResultsList() {
 //this anagramQuery handles
 let anagramQuery = function (event) {
   event.preventDefault();
-  let condition = userQuery.value;
-  condition = condition.toLowerCase();
-  if (condition === userObjArray[0].key) {
-    alert('You got it');
+
+  var anagramGratzText = document.getElementById('anagramGratzText');
+  var tryAgainButton = document.getElementById('tryAgain');
+
+  let userGuess = userQuery.value;
+  let correctAnswer = userObjArray[0].key;
+
+  userGuess = userGuess.toLowerCase();
+
+  if (userGuess === correctAnswer) {
+    anagramGratzBox.style.display = 'block';
+    anagramForm.style.display = 'none';
+    anagramGratzText.textContent = 'Huh. You got it right.';
+    anagramGratzBox.style.backgroundColor = '#1ca73a';
+    tryAgainButton.style.display = 'none';
+    anagramCounter--;
   } else {
-    alert('You suck I can\'t even look at you right now!');
+    anagramGratzBox.style.display = 'block';
+    anagramForm.style.display = 'none';
+    anagramGratzText.textContent = 'Ha! Wrong.';
+    anagramGratzBox.style.backgroundColor = '#d42a2a';
+    anagramCounter--;
+
+    //Show button or sorry depending on counter
+    if (anagramCounter === 0 || anagramCounter < 0 ){
+      anagramGratzText.textContent += ' No More Attempts';
+      tryAgainButton.style.display = 'none';
+    } else {
+      anagramGratzText.textContent += ` ${anagramCounter} attempts remaining`;
+    }
   }
+
+
+
 };
+
+//Called directly by Try Again button
+function tryAnagramAgain() {
+  anagramGratzBox.style.display = 'none';
+  anagramForm.style.display = 'block';
+}
 
 let playAgain = function(event){
   event.preventDefault();
