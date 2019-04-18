@@ -26,17 +26,16 @@ function scrambleWord(word){
 }
 
 // this amends the list
-function renderResultsList() {
+function renderAnagram() {
   console.log(userObjArray);
-  let ulEl = document.getElementById('renderHate');
-  for (let i in userObjArray[0].questions) {
-    let liEl = document.createElement('li');
-    liEl.textContent = userObjArray[0].questions[i];
-    ulEl.appendChild(liEl);
-  }
+  let hintEl = document.getElementById('anagramHint');
+  let hint = document.createElement('p');
+  hint.textContent = 'Hey clueless, this is an anagram. Its based on my magic word. Guess me.';
+  hintEl.appendChild(hint);
   let pEl = document.getElementById('anagramResult');
   var scrambledKey = scrambleWord(userObjArray[0].key);
   pEl.textContent = scrambledKey;
+  
 }
 
 //this anagramQuery handles
@@ -66,7 +65,7 @@ let anagramQuery = function (event) {
 
     //Show button or sorry depending on counter
     if (anagramCounter === 0 || anagramCounter < 0 ){
-      anagramGratzText.textContent += ' No More Attempts';
+      anagramGratzText.textContent += ` No More Attempts, but the magic word is: ${correctAnswer}` ;
       tryAgainButton.style.display = 'none';
     } else {
       anagramGratzText.textContent += ` ${anagramCounter} attempts remaining`;
@@ -95,7 +94,23 @@ let didNotAskQuestions = function(){
   }
 };
 
+function giveHint() {
+  let hintEl = document.getElementById('hintParagraph');
+  let hintParagraphEl = document.createElement('p');
+  hintParagraphEl.textContent = 'Since apparently you can\'t figure it out, I guess I\'ll have to help you. Look at your questions. See something different? Look to that for inspiration. And don\'t waste my time asking for more help.';
+  hintEl.appendChild(hintParagraphEl);
+  let ulEl = document.getElementById('renderHate');
+  for (let i in userObjArray[0].questions) {
+    let liEl = document.createElement('li');
+    liEl.textContent = userObjArray[0].questions[i];
+    ulEl.appendChild(liEl);
+  }
+  document.getElementById('hint').removeEventListener('click', giveHint);
+}
+
 didNotAskQuestions();
-renderResultsList();
+renderAnagram();
+
 document.getElementById('anagramSubmit').addEventListener('click', anagramQuery);
 document.getElementById('playAgain').addEventListener('click', playAgain);
+document.getElementById('hint').addEventListener('click', giveHint);

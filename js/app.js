@@ -6,6 +6,9 @@ var eightBall = document.getElementById('eightball'); //added for animation for 
 let responseContent = document.getElementById('hateballResponse');
 var questionCounter = 9;
 var thisRoundMagicWord;
+
+var responseArray = [];
+var magicWords = ['eight', 'hate','irate','angry','annoyance', 'spite','insult','injury'];
 let shake = new Audio('../audio/shake.wav');
 
 function User(name, key) {
@@ -78,6 +81,7 @@ let handleQuery = function (event) {
     new User(userSubmission, thisRoundMagicWord);
     questionCounter--;
     responseContent.textContent = `Whatever, ${userSubmission}, let's get this show on the road. What are your 'questions'?`;
+    document.getElementById('userQuestion').placeholder = 'QUESTION';
   } else {
     userSubmission = userSubmission.toLowerCase();
     questionCounter--;
@@ -105,7 +109,13 @@ let handleQuery = function (event) {
 };
 
 function renderResponse() {
-  responseContent.textContent = choiceGenerator();
+  let response;
+  do {
+    response = choiceGenerator();
+  } while (responseArray.includes(response));
+  console.log(response);
+  responseArray.push(response);
+  responseContent.textContent = response;
 }
 
 function renderQuestionCounter() {
@@ -152,12 +162,11 @@ function percentageCalclulator (questionString){
 
 }
 
-function randomMagicWord() {
-  var magicWords = ['eight', 'hate','irate','angry','annoyance', 'spite','insult','injury'];
 
+
+function randomMagicWord() {
   console.log(`Magic words length: ${magicWords.length}`);
   thisRoundMagicWord = magicWords[Math.floor(Math.random() * magicWords.length)];
-
   console.log(`thisRoundMagicWord: ${thisRoundMagicWord}`);
 }
 // function to reset the animation
@@ -174,8 +183,8 @@ let playAnimation = function(){
 };
 
 let yourNameQuestion = function(){
-  document.getElementById('hateballResponse').innerHTML = 'So, what is your name? ....... Like I care anyways';
-};
+
+  document.getElementById('hateballResponse').innerHTML = 'Just, enter your name.';
 
 //Called directly from the Proceed button in html
 function gameOver(){
