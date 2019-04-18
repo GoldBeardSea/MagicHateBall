@@ -1,11 +1,6 @@
 'use strict';
 
 
-if(localStorage.getItem('endstate') === null){
-  alert('Really, trying to see results without playing the game. Why are you wasting my time? Get out of here.');
-  window.location.href = 'index.html';
-}
-
 const userObjArray = JSON.parse(localStorage.getItem('endState'));
 let userQuery = document.getElementById('anagramQuery');
 
