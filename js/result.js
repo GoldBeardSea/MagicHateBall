@@ -4,7 +4,9 @@
 const userObjArray = JSON.parse(localStorage.getItem('endState'));
 let userQuery = document.getElementById('anagramQuery');
 var anagramGratzBox = document.getElementById('anagramGratzBox');
+var anagramGratzText = document.getElementById('anagramGratzText');
 var anagramForm = document.getElementById('anagramForm');
+var tryAgainButton = document.getElementById('tryAgain');
 
 var anagramCounter = 3;
 
@@ -40,9 +42,6 @@ function renderResultsList() {
 let anagramQuery = function (event) {
   event.preventDefault();
 
-  var anagramGratzText = document.getElementById('anagramGratzText');
-  var tryAgainButton = document.getElementById('tryAgain');
-
   let userGuess = userQuery.value;
   let correctAnswer = userObjArray[0].key;
 
@@ -70,9 +69,6 @@ let anagramQuery = function (event) {
       anagramGratzText.textContent += ` ${anagramCounter} attempts remaining`;
     }
   }
-
-
-
 };
 
 //Called directly by Try Again button
@@ -87,6 +83,16 @@ let playAgain = function(event){
   window.location.replace('index.html');
 };
 
+let didNotAskQuestions = function(){
+  if(!localStorage.getItem('endState')){
+    anagramGratzBox.style.display = 'block';
+    anagramForm.style.display = 'none';
+    anagramGratzText.textContent = 'You did not ask any questions. Please go back and play the game.';
+    tryAgainButton.style.display = 'none';
+  }
+};
+
+didNotAskQuestions();
 renderResultsList();
 document.getElementById('anagramSubmit').addEventListener('click', anagramQuery);
 document.getElementById('playAgain').addEventListener('click', playAgain);
