@@ -12,11 +12,12 @@ Black: #050505
 body {
   font-family: Arial, Helvetica, sans-serif;
   /* background-color: #565656; */
-  background-image: url('/img/black-and-white-abstract-background-1520875246AFG.jpg');
+  background-image: url('../img/black-and-white-abstract-background-1520875246AFG.jpg');
   background-color: rgb(31, 29, 29);
   background-repeat: no-repeat;
   background-size: cover;
   color:#ebd4cb;
+  font-size: 20px;
 }
 
 /* Header styling */
@@ -27,6 +28,8 @@ header {
   margin: 0px auto;
   padding-top: 5px;
   text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 header h1{
   font-family: 'Permanent Marker', cursive;
@@ -73,14 +76,14 @@ main ul {
 main ul li {
   line-height: 1.5em;
   font-family: 'Neucha', cursive;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 main h3{
   font-family: 'Permanent Marker', cursive;
   text-shadow: 2px 2px #0d0d0e;
   font-size: 30px;
-  color: #cf5c36;
+  color: #ebd4cb;
 }
 
 .gameContainer {
@@ -124,17 +127,16 @@ progress {
   position: relative;
   font-family: 'Permanent Marker', cursive;
   font-size: 30px;
-  color: #cf5c36;
-  text-shadow: 2px 2px #f4e3b2;
+  color: #ebd4cb;
 }
 
 
 progress::-webkit-progress-bar {
-  background-color: #d42a2a;
+  background-color: #ff0000;
   border-radius: 5px;
 }
 progress::-webkit-progress-value {
-  background-color: black;
+  background-color: #ebd4cb;
   border-radius: 5px;
 }
 
@@ -189,10 +191,13 @@ progress::-webkit-progress-value {
 
 .buttons {
   background-color: #0d0d0e;
-  color:#cf5c36;
+  color:#efc88b;
   border-radius: 10px;
   padding: 10px 15px;
   margin-bottom: 10px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 25px;
+  
 }
 
 /* Footer styling */
@@ -204,6 +209,8 @@ footer {
   padding: 10px 0px;
   text-align: center;
   color: #efc88b;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 /* Styling for Results page only */
