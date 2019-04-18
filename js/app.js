@@ -6,9 +6,10 @@ var eightBall = document.getElementById('eightball'); //added for animation for 
 let responseContent = document.getElementById('hateballResponse');
 var questionCounter = 9;
 var thisRoundMagicWord;
+
 var responseArray = [];
-var previousArray = [];
 var magicWords = ['eight', 'hate','irate','angry','annoyance', 'spite','insult','injury'];
+let shake = new Audio('../audio/shake.wav');
 
 function User(name, key) {
   this.name = name;
@@ -98,6 +99,7 @@ let handleQuery = function (event) {
 
   // added for eight ball animation
   if(userSubmission !== 'undefined'){
+    shake.play();
     playAnimation();
   }
   userQuery.value = null;
@@ -157,7 +159,7 @@ function percentageCalclulator (questionString){
       }, 300);
     }
   }
- 
+
 }
 
 
@@ -176,12 +178,13 @@ let resetAnimation = function(event){
 
 let playAnimation = function(){
   eightBall.classList.add('apply-shake');
+  shake.play();
   responseContent.classList.add('color-change');
 };
 
 let yourNameQuestion = function(){
+
   document.getElementById('hateballResponse').innerHTML = 'Just, enter your name.';
-};
 
 //Called directly from the Proceed button in html
 function gameOver(){
