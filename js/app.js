@@ -82,8 +82,8 @@ let handleQuery = function (event) {
     questionCounter--;
     percentageCalclulator(userSubmission);
     renderResponse();
-
   }
+
   if (questionCounter === 0) {
     var proceedButton = document.getElementById('proceed');
     var questionForm = document.getElementById('question-form');
@@ -134,13 +134,17 @@ function percentageCalclulator (questionString){
   userObjArray[0].questions.push(questionString);
   currentScore = Math.round((matchingLetters / questionString.length) * 100);
 
- 
-
   if (userObjArray[0].score === 0){
     userObjArray[0].score = currentScore;
   } else {
     userObjArray[0].score = Math.round((userObjArray[0].score + currentScore) / 2);
+    if(userObjArray[0].score < 5){
+      console.log('hits rage quit');
+      alert('RAGE QUIT!!!!');
+      gameOver();
+    }
   }
+ 
 }
 
 function randomMagicWord() {

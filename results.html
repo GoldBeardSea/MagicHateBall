@@ -25,7 +25,7 @@
     <ul id="renderHate">
 
     </ul>
-    <fieldset>
+    <fieldset id="anagramForm">
       <legend>Something you said pushed the Hate Ball's buttons. Can you guess the Hate Ball's hated word?</legend>
         <form>
             <p id="anagramResult"></p>
@@ -33,6 +33,10 @@
             <button id="anagramSubmit" class="buttons">Check</button>
           </form>
     </fieldset>
+    <section id="anagramGratzBox">
+      <h2 id="anagramGratzText"></h2>
+      <a onclick="tryAnagramAgain()" class="buttons" id="tryAgain">Try Again</a>
+    </section>
 
     <!-- id = 'playAgain' Play Again/Button should clear Local Storage -->
     <button id="playAgain" class="buttons"><a href="index.html">Play Again</a></button>
