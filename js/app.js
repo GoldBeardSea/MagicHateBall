@@ -73,12 +73,12 @@ function choiceGenerator() {
 let handleQuery = function (event) {
   event.preventDefault();
   let userSubmission = userQuery.value;
-  userSubmission = userSubmission.toLowerCase();
   if (questionCounter > 8) {
     new User(userSubmission, thisRoundMagicWord);
     questionCounter--;
     responseContent.textContent = `Whatever, ${userSubmission}, let's get this show on the road. What are your 'questions'?`;
   } else {
+    userSubmission = userSubmission.toLowerCase();
     questionCounter--;
     percentageCalclulator(userSubmission);
     renderResponse();
@@ -142,7 +142,7 @@ function percentageCalclulator (questionString){
 }
 
 function randomMagicWord() {
-  var magicWords = ['eight', 'hate','irate','angry','pear', 'spite','insult','injury'];
+  var magicWords = ['eight', 'hate','irate','angry','annoyance', 'spite','insult','injury'];
 
   console.log(`Magic words length: ${magicWords.length}`);
   thisRoundMagicWord = magicWords[Math.floor(Math.random() * magicWords.length)];
