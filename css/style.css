@@ -197,6 +197,14 @@ fieldset {
   font-size: 50px;
 }
 
+#hintParagraph {
+  line-height: 1.5em;
+}
+
+#hint {
+  background-color: 
+}
+
 /* Styling for AboutUs page only */
 .aboutUs {
   margin: 0px auto;
