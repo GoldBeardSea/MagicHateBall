@@ -1,6 +1,5 @@
 'use strict';
 
-
 const userObjArray = JSON.parse(localStorage.getItem('endState'));
 let userQuery = document.getElementById('anagramQuery');
 var anagramGratzBox = document.getElementById('anagramGratzBox');
