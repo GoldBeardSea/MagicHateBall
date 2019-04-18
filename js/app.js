@@ -10,6 +10,7 @@ var thisRoundMagicWord;
 var responseArray = [];
 var magicWords = ['eight', 'hate','irate','angry','annoyance', 'spite','insult','injury'];
 let shake = new Audio('../audio/shake.wav');
+shake.volume = .5;
 
 function User(name, key) {
   this.name = name;
