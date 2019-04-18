@@ -61,7 +61,7 @@ let anagramQuery = function (event) {
 
     //Show button or sorry depending on counter
     if (anagramCounter === 0 || anagramCounter < 0 ){
-      anagramGratzText.textContent += ' No More Attempts';
+      anagramGratzText.textContent += ` No More Attempts, but the magic word is: ${correctAnswer}` ;
       tryAgainButton.style.display = 'none';
     } else {
       anagramGratzText.textContent += ` ${anagramCounter} attempts remaining`;
