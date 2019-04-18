@@ -172,7 +172,7 @@ let playAnimation = function(){
 };
 
 let yourNameQuestion = function(){
-  document.getElementById('hateballResponse').innerHTML = 'So, what is your name? .......Like I care anyways';
+  document.getElementById('hateballResponse').innerHTML = 'Just, enter your name.';
 };
 
 //Called directly from the Proceed button in html
