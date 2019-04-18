@@ -227,10 +227,11 @@ fieldset {
 #anagramGratzBox {
   display: none;
   width: 900px;
-  height: 120px;
+  height: 180px;
   margin: 0px auto;
   margin-bottom: 20px;
   background-color: #efc88b;
+  border-radius: 15px;
 }
 
 #anagramGratzText {
