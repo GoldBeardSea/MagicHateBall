@@ -9,7 +9,7 @@ var thisRoundMagicWord;
 
 function User(name, key) {
   this.name = name;
-  this.score = 0;
+  this.score = 100;
   this.questions = [];
   this.key = key;
   userObjArray.push(this);
@@ -162,7 +162,7 @@ let playAnimation = function(){
 };
 
 let yourNameQuestion = function(){
-  document.getElementById('hateballResponse').innerHTML = 'So, What is your name? .......Like I care anyways';
+  document.getElementById('hateballResponse').innerHTML = 'So, what is your name? .......Like I care anyways';
 };
 
 //Called directly from the Proceed button in html
