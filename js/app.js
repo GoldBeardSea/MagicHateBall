@@ -185,6 +185,7 @@ let playAnimation = function(){
 let yourNameQuestion = function(){
 
   document.getElementById('hateballResponse').innerHTML = 'Just, enter your name.';
+}
 
 //Called directly from the Proceed button in html
 function gameOver(){
@@ -202,7 +203,7 @@ playAnimation();
 document.getElementById('submit').addEventListener('click', handleQuery);
 
 userQuery.addEventListener('change', resetAnimation);
+
 document.getElementById('submit').addEventListener('click', function(){
   document.getElementById('rageBar').value = userObjArray[0].score;
 });
-
