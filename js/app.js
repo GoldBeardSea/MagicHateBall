@@ -185,7 +185,7 @@ let playAnimation = function(){
 let yourNameQuestion = function(){
 
   document.getElementById('hateballResponse').innerHTML = 'Just, enter your name.';
-}
+};
 
 //Called directly from the Proceed button in html
 function gameOver(){
